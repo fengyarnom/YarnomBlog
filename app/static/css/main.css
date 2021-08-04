@@ -1,0 +1,200 @@
+@media only screen and (min-width: 768px) {
+    a {
+        text-decoration: none;
+        color: #3d3d3d;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .public-nav {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border-bottom: 1px solid #dadada9e;
+        margin-bottom: 2rem;
+    }
+
+    .public-nav .nav-group {
+        letter-spacing: 0.15rem;
+    }
+
+    .public-nav .nav-group .title {
+        padding: 0.5rem;
+        font-weight: bold;
+    }
+
+    .public-nav .nav-group a {
+        display: flex;
+        align-items: center;
+
+    }
+
+    .public-nav .nav-group .title img {
+        width: 32px;
+        height: 32px;
+        padding-right: 12px;
+    }
+
+    .public-nav .nav-group ul {
+        padding: 0;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .public-nav .nav-group ul li {
+        padding: 0.5rem 1rem;
+        border-bottom: 3px solid #f7f7f700;
+    }
+
+    .public-nav .nav-group ul li img {
+        width: 16px;
+        height: 16px;
+        padding-right: 8px;
+
+    }
+
+    .public-nav .nav-group ul li:hover {
+        background-color: #d8d3d34f;
+        border-radius: 5px;
+        border-bottom: 3px solid #1c901ca3;
+    }
+
+    .public-nav .nav-group ul li:hover a {
+        color: #222222;
+    }
+
+    .page-home .application-main {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: baseline;
+    }
+
+    .page-home .application-main .lately {
+        width: 15%;
+        border-right: 1px solid #dadada9e;
+        padding: 1rem;
+    }
+
+    .page-home .application-main .lately .title {
+        font-weight: bold;
+        color: #3d3d3d;
+        margin-bottom: 3rem;
+        padding-left: 14px;
+    }
+
+    .page-home .application-main .lately .item-group {
+        margin-bottom: 1rem;
+    }
+
+    .page-home .application-main .lately .item-group .subtitle {
+        font-weight: bold;
+        font-size: 14px;
+        color: rgba(61, 61, 61, 0.48);
+        margin-bottom: 1rem;
+        padding-left: 14px;
+    }
+
+    .page-home .application-main .lately .item-group ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    .page-home .application-main .lately .item-group ul li {
+        padding: 0.4rem 0;
+        border-radius: 6px;
+    }
+
+    .page-home .application-main .lately .item-group ul li:hover {
+        background-color: #c3bcbc45;;
+    }
+
+    .page-home .application-main .lately .item-group ul li a {
+        padding-left: 14px;
+    }
+
+    .page-home .application-main .mainBox {
+        width: 40%;
+        line-height: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    .page-home .application-main .mainBox h1 {
+        font-size: 26px;
+        padding: 1rem 0;
+    }
+
+    .page-home .application-main .rightBox {
+        width: 15%;
+    }
+
+    .page-login .application-main {
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .page-login .application-main .loginBox {
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        border: 1px solid #dadada9e;
+        border-radius: 8px;
+        padding: 2rem 3.5rem;
+    }
+
+    .page-login .application-main .loginBox .login-title {
+        padding-bottom: 1.5rem;
+    }
+
+    .page-login .application-main .loginBox .login-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .page-login .application-main .loginBox .login-form .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0.8em;
+    }
+
+    .page-login .application-main .loginBox .login-form span {
+        letter-spacing: 2px;
+
+    }
+
+    .page-login .application-main .loginBox .login-form input {
+        height: 1.3rem;
+        padding: 0.4rem 0.8rem;
+        border: 1px solid #dadada;
+        border-radius: 6px;
+        outline: none;
+        margin: 0.6rem 0;
+        letter-spacing: 1px;
+        font-weight: bold;
+    }
+
+    .page-login .application-main .loginBox .login-form input:focus {
+        border: 1px solid #288a98ba;
+        box-shadow: 0 0 4px #65a4d4ad;
+    }
+
+    .page-login .application-main .loginBox .login-form button {
+        margin-top: 1rem;
+        padding: 0.4rem 0.8rem;
+        outline: none;
+        background-color: #2ea44f;
+        background-color: #1084b8e0;;
+        border: 1px solid #dadada;
+        border-radius: 6px;
+        color: #d5eddc;
+    }
+}

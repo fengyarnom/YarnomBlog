@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+
+{% block applicationMain %}
+<div class="page-login">
+    <div class="application-main">
+    <div class="loginBox">
+          <h2 class="login-title">登录</h2>
+          <form action="/login" class="login-form" method="post">
+            <div class="form-group">
+              <span>用户名：</span>
+              <input type="text" placeholder="Username">
+            </div>
+
+            <div class="form-group">
+              <span>密码：</span>
+              <input type="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <button type="submit">登录</button>
+            </div>
+          </form>
+      </div>
+    </div>
+</div>
+{% endblock %}
