@@ -12,7 +12,9 @@
         display: flex;
         flex-direction: column;
     }
-
+    .flex{
+        display:flex;
+    }
     .public-nav {
         display: flex;
         justify-content: space-evenly;
@@ -135,6 +137,8 @@
         width: 15%;
     }
 
+
+
     .page-login .application-main {
         display: flex;
         justify-content: center;
@@ -196,5 +200,74 @@
         border: 1px solid #dadada;
         border-radius: 6px;
         color: #d5eddc;
+    }
+    .page-login .application-main .loginBox .login-form .wrong{
+        border-left: 5px solid #ef3333;
+        font-size:14px;
+        padding-left:15px;
+    }
+
+    .page-newPost .application-main {
+        display: flex;
+        justify-content: center;
+
+    }
+    .page-newPost .application-main .post-form{
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        border: 1px solid #dadada9e;
+        border-radius: 4px;
+        box-shadow: 0 1px 5px #ddd;
+
+
+    }
+    .page-newPost .application-main .post-form .form-group{
+        margin: 0em 8rem;
+    }
+    .page-newPost .application-main .post-form .title{
+        border:none;
+        border-bottom: 1px solid #73736cad;
+        width:100%;
+        outline: none;
+        margin-bottom:2em
+        letter-spacing: 1.5px;
+        font-weight: bold;
+        font-size:23px;
+        margin:3.5em 0 1.5em 0;
+        padding-bottom:1em;
+    }
+    .page-newPost .application-main .post-form .title:focus {
+        border-bottom: 1px solid #73736cad;
+    }
+
+    .page-newPost .application-main .post-form .content{
+        border:none;
+        width:100%;
+        outline: none;
+        margin-bottom:2em
+        letter-spacing: 1px;
+        font-size:17px;
+        min-height:600px;
+        max-height:1200px;
+        line-hight:1.7;
+        outline:none;
+    }
+    .page-newPost .application-main .button-box{
+        display:flex;
+        justify-content: flex-end;
+        padding-bottom:2em;
+    }
+    .page-newPost .application-main .button-box button{
+
+        background:#0079ae;
+        outline:none;
+        border:1px solid #0079ae;
+        color:white;
+        border-radius:4px;
+        padding:10px 15px;
+        font-weight: bold;
     }
 }

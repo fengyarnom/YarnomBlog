@@ -1,0 +1,19 @@
+from initialize import db
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(30), unique=True, nullable=False)
+    password = db.Column(db.String(25), nullable=False)
+
+    def __repr__(self):
+        return '<User %r>' % self.username
+
+
+class Post(db.Model):
+    id = db.Column(db.Integer, unique=True,primary_key=True)
+    title = db.Column(db.String(128), nullable=False)
+    content = db.Column(db.Text, nullable=False)
+    time = db.Column(db.Date, nullable=False)
+
+    def __repr__(self):
+        return '<Post %r>' % self.title

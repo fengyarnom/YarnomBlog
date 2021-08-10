@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block applicationMain %}
+    <div class="page-newPost">
+        <div class="application-main">
+            <form action="/new-post" class="post-form" method="get">
+                <div class="form-group">
+                  <input class="title" type="text" name="title" placeholder="标题">
+                </div>
+
+                <div class="form-group">
+                    <textarea class="content" name="content" contenteditable="true" >
+
+                    </textarea>
+                </div>
+
+                <div class="form-group button-box">
+                  <button type="submit">PUBLISH</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
