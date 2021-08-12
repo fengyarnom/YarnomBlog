@@ -14,6 +14,9 @@ class Post(db.Model):
     title = db.Column(db.String(128), nullable=False)
     content = db.Column(db.Text, nullable=False)
     time = db.Column(db.Date, nullable=False)
+    pid = db.Column(db.String(128), nullable=False)
+    isTop = db.Column(db.Integer, nullable=False)
+    archiveClass = db.Column(db.String(256), nullable=True)
 
     def __repr__(self):
         return '<Post %r>' % self.title

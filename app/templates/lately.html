@@ -5,14 +5,14 @@
                     思考集
                 </div>
                 <ul>
-                    {% for item in range(3) %}
-                    <li><a href="">{{ posts[item].title }}</a></li>
+                    {% for item in posts %}
+                    <li><a href="">{{ item.title }}</a></li>
                     {% endfor %}
                 </ul>
             </div>
             <div class="item-group">
                 <div class="subtitle">
-                    思考集
+                    CS札记
                 </div>
                 <ul>
                     <li><a href="">Item</a></li>

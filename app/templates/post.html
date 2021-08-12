@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block applicationMain %}
+<div class="page-post">
+    <div class="application-main">
+        <div class="post">
+            <div class="title">
+                {{ post.title }}
+            </div>
+            <div class="time">
+                   发布时间：
+                    <span>{{ post.time }}</span>
+            </div>
+            <div class="content">
+                {{ post.content }}
+            </div>
+            <div class="footer">
+                结束
+            </div>
+        </div>
+
+        <div class="right-box">
+            <div class="block">
+                <a href="" class="come_back_index">
+                    <img src="{{ url_for('static',filename='img/返回.svg') }}" alt="">
+                    返回主页
+                </a>
+                <a href="" class="next_post">
+                    <img src="{{ url_for('static',filename='img/右.svg') }}" alt="">
+                    下篇文章
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
