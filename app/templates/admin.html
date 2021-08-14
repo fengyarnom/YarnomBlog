@@ -1,2 +1,28 @@
-<h1>后台</h1>
-<a href="/admin/new-post">写一篇新的文章</a>
+{% extends 'base.html' %}
+
+{% block applicationMain %}
+<div class="page-admin">
+    <div class="posts">
+        <ul>
+            <li>
+                <div class="post">
+                    <a href="">Hello</a>
+                </div>
+                <div class="option">
+                    <a href="">查看</a>
+                    <a href="/new-post?pid=1000">修改</a>
+                    <a href="">删除</a>
+                </div>
+
+            </li>
+        </ul>
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a href="">写一篇新的文章</a></li>
+            <li><a href="">用户管理</a></li>
+        </ul>
+    </div>
+</div>
+
+{% endblock %}

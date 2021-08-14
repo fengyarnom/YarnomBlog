@@ -32,7 +32,11 @@
         <ul>
             <li><a href="/login">
                 <img src="../static/img/登录%20(1).svg" alt="">
-                    {{ name }}
+                    {% if username is not none %}
+                        {{ username }}
+                    {% else %}
+                        登录
+                    {% endif %}
             </a></li>
         </ul>
     </div>

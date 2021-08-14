@@ -5,7 +5,7 @@
     <div class="application-main">
         <div class="loginBox">
             <!--          <h2 class="login-title">登录错误,请重新输入</h2>-->
-            {% if state == 0 or state == 1 %}
+            {% if account_state == "AccountSignOut" %}
                 <h2 class="login-title">登录</h2>
             {% else %}
                 <h2 class="login-title">登录错误</h2>
@@ -20,7 +20,7 @@
                     <input type="password" name="password" placeholder="Password">
                 </div>
 
-                {% if state == 2 %}
+                {% if account_state == "AccountError" %}
                     <div class="form-group">
                         <div class="wrong">密码或用户名错误</div>
                     </div>

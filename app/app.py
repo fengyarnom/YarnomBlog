@@ -1,76 +1,69 @@
-from flask import render_template,request,redirect, url_for,session
-from initialize import app,db
-from models.dbModels import *
-import time
+from flask import render_template,request,redirect, url_for
 from datetime import datetime
-from toolkit import *
-from enum import Enum
+import time
 
-app.config["SECRET_KEY"] = "FengYarnomIsTheWebsiteAdmin"
+from initialize import *
+from models.db.dbModels import *
+from toolkit import *
+
 
 
 # Router
 @app.route("/")
 def index():
     try:
-        userPermission = UserPermission()
-        if userPermission.user_confirm():
-            name = session.get("loginName")
-        else:
-            name = "登录"
         posts = Post.query.order_by(Post.id.desc()).all()
     except Exception as e:
         print(e)
 
-    return render_template('index.html', posts=posts,name=name)
-
-@app.route("/login",methods=['POST', 'GET'])
+    return render_template('index.html', posts=posts,username=session.get("username"))
+@app.route("/login",methods=['POST','GET'])
 def login():
-    #pass_state
-    if session.get("loginName") and session.get("loginName") != "NULLNAME":
-        return redirect(url_for('admin'))
+    try:
+        if user_action.getUserConfirm():
+            return redirect(url_for('admin'))
+        else:
+            if request.method == "POST":
+                username = request.form.get('username')
+                password = request.form.get('password')
+                account_state = user_action.setUserLogin(table=User,username=username,password=password)
+                if account_state == "AccountCorrect":
+                    return redirect(url_for('admin'))
+                else:
+                    return render_template('login.html',account_state = account_state,username=session.get("username"))
+    except Exception as e:
+        print(e)
 
-    if request.method == "POST":
-        username = request.form.get('username')
-        password = request.form.get('password')
-        for user in User.query.all():
-            if username == user.username and password == user.password:
-                session["loginName"] = username
-                return redirect(url_for('admin'))
-            else:
-                session["loginName"] = "NULLNAME"
-                state = 2
-    else:
-        state = 0
+    return render_template('login.html',account_state = "AccountSignOut",username=session.get("username"))
 
-    return render_template('login.html',state = state)
-
-@app.route("/admin/new-post",methods=['POST', 'GET'])
+@app.route("/new-post",methods=['POST', 'GET'])
 def newPost():
-    # db.create_all()
-    # db.session.commit()
-    userPermission = UserPermission()
+    try:
+        if user_action.getUserConfirm():
+            if request.args.get("title") is not None:
+                print("BBBBBBBBBBBBBBBBb")
+                title = request.args.get("title")
+                content = request.args.get("content")
+                pid = time.strftime("%Y%m%d%H%M%S", time.localtime())
 
-    if userPermission.user_confirm():
-        if request.args.get("title") is not None:
-            title = request.args.get("title")
-            content = request.args.get("content")
-            pid = time.strftime("%Y%m%d%H%M%S", time.localtime())
-            post = Post(title=title, content=content, time=datetime.now(),pid=pid,isTop=0,archiveClass="Test")
-            db.session.add(post)
-            db.session.commit()
-        return render_template('newPost.html')
-    else:
-        return redirect(url_for('login'))
+                post = Post(title=title, content=content, time=datetime.now(), pid=pid, isTop=0, archiveClass="Test")
+                db.session.add(post)
+                db.session.commit()
+            return render_template('newPost.html',username=session.get("username"))
+        else:
+            return redirect(url_for('login'))
+    except Exception as e:
+        print(e)
 
 @app.route("/admin",methods=['POST', 'GET'])
 def admin():
-    userPermission = UserPermission()
-
-    if userPermission.user_confirm():
-        return render_template('admin.html')
-    else:
-        return redirect(url_for('login'))
+    try:
+        if user_action.getUserConfirm():
+            return render_template('admin.html')
+        else:
+            return redirect(url_for('login'))
+    except Exception as e:
+        print(e)
 
 @app.route("/login_out")
 def login_out():

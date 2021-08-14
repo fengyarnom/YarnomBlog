@@ -343,4 +343,17 @@
         width:14px;
         height:14px;
     }
+
+    .page-admin{
+        display:flex;
+        flex-direction:row;
+        justify-content: space-around
+    }
+    .page-admin .posts li{
+        display:flex;
+        flex-direction:row;
+    }
+    .page-admin .posts li .post{
+        padding-right:1em;
+    }
 }
