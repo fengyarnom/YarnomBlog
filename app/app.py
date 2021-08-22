@@ -11,11 +11,10 @@ from toolkit import *
 # Router
 @app.route("/",methods=['POST','GET'])
 def index():
-    try:
-        posts = Post.query.order_by(Post.id.desc()).all()
-    except Exception as e:
-        print(e)
-    return render_template('index.html', posts=posts,username=session.get("username"))
+    posts = Post.query.order_by(Post.id.desc()).all()
+
+    return render_template('index.html', posts=posts, username=session.get("username"))
+
 
 @app.route("/login",methods=['POST','GET'])
 def login():
