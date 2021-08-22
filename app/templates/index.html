@@ -16,8 +16,25 @@
 
         </div>
         <div class="rightBox">
-            <!--之后可能还有需要,不要删除，页面布置相关-->
+            <span>AAA</span>
         </div>
+
     </div>
 </div>
+
+<script>
+    $(function(){
+        $("button").click(function(){
+            $.post("/try/ajax/demo_test_post.php",
+            {
+                name:"菜鸟教程",
+                url:"http://www.runoob.com"
+            },
+            function(data,status){
+                alert("数据: \n" + data + "\n状态: " + status);
+        });
+});
+
+    });
+</script>
 {% endblock %}

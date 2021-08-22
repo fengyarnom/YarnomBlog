@@ -5,20 +5,34 @@
         <div class="application-main">
             <form action="/new-post" class="post-form" method="get">
                 <div class="form-group">
-                  <input class="title" type="text" name="title" placeholder="标题">
+                  <input class="form-title" type="text" name="title" placeholder="标题">
                 </div>
-
                 <div class="form-group">
-                    <textarea class="content" name="content" contenteditable="true" >
+                    <div class="form-content" name="content" contenteditable="true" >
 
-                    </textarea>
+                    </div>
                 </div>
-
+                
                 <div class="form-group send-box">
-                    <button type="submit">PUBLISH</button>
+                    <!-- <div class="button" onclick="send()">PUBLISH</div>   -->
+                    <div class="button">PUBLISH</div>  
                 </div>
                 
             </form>
         </div>
     </div>
+
+    <script>
+        $(document).ready(function(){
+            $(".button").click(function(){
+                var title = $(".form-title").val();
+                var content = $(".form-content").text();
+                $.post("/new-post",{
+                    title:title,
+                    content:content
+                });
+            });
+        });
+    
+    </script>
 {% endblock %}

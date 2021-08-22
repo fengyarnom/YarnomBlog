@@ -228,7 +228,7 @@
     .page-newPost .application-main .post-form .form-group{
         margin: 0em 8rem;
     }
-    .page-newPost .application-main .post-form .title{
+    .page-newPost .application-main .post-form .form-title{
         border:none;
         border-bottom: 1px solid #73736cad;
         width:100%;
@@ -240,11 +240,11 @@
         margin:3.5em 0 1.5em 0;
         padding-bottom:1em;
     }
-    .page-newPost .application-main .post-form .title:focus {
+    .page-newPost .application-main .post-form .form-title:focus {
         border-bottom: 1px solid #73736cad;
     }
 
-    .page-newPost .application-main .post-form .content{
+    .page-newPost .application-main .post-form .form-content{
         border:none;
         width:100%;
         outline: none;
@@ -261,17 +261,8 @@
         justify-content: flex-end;
         padding-bottom:2em;
     }
-    .page-newPost .application-main .send-box button{
+    .page-newPost .application-main .send-box .button{
 
-        background:#0079ae;
-        outline:none;
-        border:1px solid #0079ae;
-        color:white;
-        border-radius:4px;
-        padding:10px 15px;
-        font-weight: bold;
-    }
-    .page-newPost .application-main .send-box button{
         background:#0079ae;
         outline:none;
         border:1px solid #0079ae;

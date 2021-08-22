@@ -9,14 +9,14 @@ from toolkit import *
 
 
 # Router
-@app.route("/")
+@app.route("/",methods=['POST','GET'])
 def index():
     try:
         posts = Post.query.order_by(Post.id.desc()).all()
     except Exception as e:
         print(e)
-
     return render_template('index.html', posts=posts,username=session.get("username"))
+
 @app.route("/login",methods=['POST','GET'])
 def login():
     try:
@@ -40,15 +40,15 @@ def login():
 def newPost():
     try:
         if user_action.getUserConfirm():
-            if request.args.get("title") is not None:
-                print("BBBBBBBBBBBBBBBBb")
-                title = request.args.get("title")
-                content = request.args.get("content")
+            if request.form.get("title") is not None:
+                title = request.form.get("title")
+                content = request.form.get("content")
                 pid = time.strftime("%Y%m%d%H%M%S", time.localtime())
 
                 post = Post(title=title, content=content, time=datetime.now(), pid=pid, isTop=0, archiveClass="Test")
                 db.session.add(post)
                 db.session.commit()
+
             return render_template('newPost.html',username=session.get("username"))
         else:
             return redirect(url_for('login'))
@@ -77,6 +77,9 @@ def post(pid):
     post = Post.query.filter_by(pid=pid).first()
     return render_template('post.html',post=post)
 
-# main function
+@app.route("/archive")
+def archive():
+    return render_template('archive.html')
+
 if __name__ == '__main__':
-    app.run(debug=True,host='0.0.0.0',port=3000)
+    app.run(debug=True,host='0.0.0.0',port=8080)
