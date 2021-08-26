@@ -1,4 +1,7 @@
+
 from initialize import db
+
+Base = db.Model
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -10,7 +13,7 @@ class User(db.Model):
 
 
 class Post(db.Model):
-    id = db.Column(db.Integer, unique=True,primary_key=True)
+    id = db.Column(db.Integer, unique=True, primary_key=True)
     title = db.Column(db.String(128), nullable=False)
     content = db.Column(db.Text, nullable=False)
     time = db.Column(db.Date, nullable=False)
@@ -21,14 +24,16 @@ class Post(db.Model):
     def __repr__(self):
         return '<Post %r>' % self.title
 
+
 class ArchiveClass(db.Model):
-    name = db.Column(db.String(256), unique=True,primary_key=True,nullable=False)
+    name = db.Column(db.String(256), unique=True, primary_key=True, nullable=False)
 
     def __repr__(self):
         return '<ArchiveClass %r>' % self.name
-    
+
+
 class Note(db.Model):
-    id = db.Column(db.Integer, unique=True,primary_key=True)
+    id = db.Column(db.Integer, unique=True, primary_key=True)
     title = db.Column(db.String(128), nullable=False)
     content = db.Column(db.Text, nullable=False)
     time = db.Column(db.Date, nullable=False)

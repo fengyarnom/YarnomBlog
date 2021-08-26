@@ -5,12 +5,16 @@
         <div class="application-main">
             <div class="left-box"></div>
             <form action="/new-post" class="post-form" method="get">
+                <span class="span-pid">
+                    {{ post.pid }}
+                </span>
                 <div class="form-group">
-                    <input class="form-title" type="text" name="title" placeholder="请输入标题">
+                    <input class="form-title" type="text" name="title" value={{post.title}}>
+                    
                 </div>
                 <div class="form-group">
                     <div class="form-content" name="content" contenteditable="true" >
-                        
+                        {{ post.content |safe}}
                     </div>
                 </div>
                 
@@ -23,7 +27,7 @@
                 <div class="archive-box">
                     <h4>归档设置</h4>
                     <div class="set-tag">
-                        <input type="text" class="tagName" placeholder="添加标签">
+                        <input type="text" class="tagName" placeholder={{post.tag}}>
                         <div class="showTagList">
                             <ul class="tagList">
                                 {% for item in archiveClass %}
@@ -38,7 +42,11 @@
                 </div>
                 <div class="option">
                     <h4>文章设置</h4>
-                    <label><input class="checkbox set-top" type="checkbox"> 置顶此文章 </label> 
+                    {% if post.isTop%}
+                        <label><input class="checkbox set-top" type="checkbox" checked> 置顶此文章 </label> 
+                    {% else %}
+                        <label><input class="checkbox set-top" type="checkbox"> 置顶此文章 </label>
+                    {% endif %}
                     <label><input class="checkbox set-note" type="checkbox"> 设置此文章为通告 </label> 
                     
                 </div>
@@ -65,14 +73,16 @@
                     post_class = 'post';
                 }
 
-                $.post("/new-post",{
+                
+                var post_url = '/modifyPost/'+$('.span-pid').text().trim();
+                $.post(post_url,{
                     post_class:post_class,
                     title:title,
                     content:content,
                     tag:archiveClass,
                     isTop:isTop
                 });
-                alert("上传成功");
+                alert("修改成功");
             });
 
             $(".tagName").focus(function(){

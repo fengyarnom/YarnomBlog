@@ -3,6 +3,7 @@
 {% block applicationMain %}
 <div class="page-post">
     <div class="application-main">
+        <div class="left-box"></div>
         <div class="post">
             <div class="title">
                 {{ post.title }}
@@ -12,7 +13,7 @@
                     <span>{{ post.time }}</span>
             </div>
             <div class="content">
-                {{ post.content }}
+                {{ post.content|safe}}
             </div>
             <div class="footer">
                 结束
@@ -21,7 +22,7 @@
 
         <div class="right-box">
             <div class="block">
-                <a href="" class="come_back_index">
+                <a href="/" class="come_back_index">
                     <img src="{{ url_for('static',filename='img/返回.svg') }}" alt="">
                     返回主页
                 </a>
@@ -34,4 +35,19 @@
 
     </div>
 </div>
+<script>
+    $(document).ready(function(){
+        txt  = $(".post .content").html().trim();
+        txt = txt.replace(/(.+?)(<div>)/,"<div>$1</div><div>");
+        txt = txt.replace(/<div># (.+?)<\/div>/ig,"<h1>$1</h1>");
+        txt = txt.replace(/<div>## (.+?)<\/div>/ig,"<h2>$1</h3>");
+        txt = txt.replace(/<div>### (.+?)<\/div>/ig,"<h3>$1</h3>");
+        txt = txt.replace(/<div>#### (.+?)<\/div>/ig,"<h4>$1</h4>");
+        txt = txt.replace(/<div>##### (.+?)<\/div>/ig,"<h5>$1</h5>");
+        txt = txt.replace(/<div>###### (.+?)<\/div>/ig,"<h6>$1</h6>");
+        $(".post .content").html(txt)
+                
+    });
+
+</script>
 {% endblock %}

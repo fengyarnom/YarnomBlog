@@ -3,38 +3,94 @@
 {% block applicationMain %}
 <div class="page-home">
     <div class="application-main">
-        <div class="lately">
-            {% include 'lately.html'%}
-        </div>
+        
+        {% if tags %}
+            <div class="lately">
+                <div class="title">Lately</div>
+                <div class="item-group">
+                    <ul>
+                        {% for post in posts %}
+                            <li><a href="/post/{{ post.pid}}">{{ post.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+
+                    {% for tag in tags %}
+                    <div class="subtitle">
+                        {{ tag.name }}
+                    </div>
+                    <ul>
+                        {% for post in posts %}
+                            {% if post.tag == tag.name %}
+                                <li><a href="/post/{{ post.pid}}">{{ post.title }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                    {% endfor %}
+                </div>  
+            </div>
+        {% endif%}
+        
         <div class="mainBox">
+            {% for item in tops %}
+                <div class="post">
+                    <span class="time">{{ item.time }}</span>
+                    <div class="title">
+                        <div class="pre">&</div>
+                        <a href="/post/{{ item.pid }}">{{ item.title }}</a>
+                        <span>置顶文章</span>
+                    </div>
+                    <div class="content">
+                        {{ item.content|safe}}
+                    </div>
+                </div>  
+                
+            {% endfor%}
+
             {% for item in posts %}
-                <h1>
-                    <a href="/post/{{ item.pid }}">{{ item.title }}</a>
-                </h1>
-                {{ item.content }}
+                <div class="post">
+                    <span class="time">{{ item.time }}</span>
+                    <div class="title">
+                        <div class="pre">&</div>
+                        <a href="/post/{{ item.pid }}">{{ item.title }}</a>
+                        
+                    </div>
+                    <div class="content">
+                        {{ item.content|safe}}
+                    </div>
+                </div>  
             {% endfor%}
 
         </div>
-        <div class="rightBox">
-            <span>AAA</span>
-        </div>
-
+        {% if notes %}
+            <div class="notes">
+                <h4>Notes</h4>
+                {% for note in notes %}
+                    <div class="note">
+                        {{ note.content|safe}}
+                    </div>
+                {% endfor%}
+            </div>
+        {% else %}      
+            <div class="notes"></div>
+        {% endif %}
     </div>
 </div>
 
 <script>
-    $(function(){
-        $("button").click(function(){
-            $.post("/try/ajax/demo_test_post.php",
-            {
-                name:"菜鸟教程",
-                url:"http://www.runoob.com"
-            },
-            function(data,status){
-                alert("数据: \n" + data + "\n状态: " + status);
+        $(document).ready(function(){
+           $(".mainBox .content").each(function(){
+                txt  = $(this).html().trim();
+                txt = txt.replace(/(.+?)(<div>)/,"<div>$1</div><div>");
+                txt = txt.replace(/<div># (.+?)<\/div>/ig,"<h1>$1</h1>");
+                txt = txt.replace(/<div>## (.+?)<\/div>/ig,"<h2>$1</h3>");
+                txt = txt.replace(/<div>### (.+?)<\/div>/ig,"<h3>$1</h3>");
+                txt = txt.replace(/<div>#### (.+?)<\/div>/ig,"<h4>$1</h4>");
+                txt = txt.replace(/<div>##### (.+?)<\/div>/ig,"<h5>$1</h5>");
+                txt = txt.replace(/<div>###### (.+?)<\/div>/ig,"<h6>$1</h6>");
+                $(this).html(txt)
+            });
+                    
         });
-});
 
-    });
-</script>
+    </script>
 {% endblock %}
