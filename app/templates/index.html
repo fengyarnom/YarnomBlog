@@ -3,33 +3,9 @@
 {% block applicationMain %}
 <div class="page-home">
     <div class="application-main">
-        
-        {% if tags %}
-            <div class="lately">
-                <div class="title">Lately</div>
-                <div class="item-group">
-                    <ul>
-                        {% for post in posts %}
-                            <li><a href="/post/{{ post.pid}}">{{ post.title }}</a></li>
-                        {% endfor %}
-                    </ul>
 
-                    {% for tag in tags %}
-                    <div class="subtitle">
-                        {{ tag.name }}
-                    </div>
-                    <ul>
-                        {% for post in posts %}
-                            {% if post.tag == tag.name %}
-                                <li><a href="/post/{{ post.pid}}">{{ post.title }}</a></li>
-                            {% endif %}
-                        {% endfor %}
-                    </ul>
-                    {% endfor %}
-                </div>  
-            </div>
-        {% endif%}
-        
+
+
         <div class="mainBox">
             {% for item in tops %}
                 <div class="post">
@@ -42,8 +18,8 @@
                     <div class="content">
                         {{ item.content|safe}}
                     </div>
-                </div>  
-                
+                </div>
+
             {% endfor%}
 
             {% for item in posts %}
@@ -52,27 +28,68 @@
                     <div class="title">
                         <div class="pre">&</div>
                         <a href="/post/{{ item.pid }}">{{ item.title }}</a>
-                        
+
                     </div>
                     <div class="content">
                         {{ item.content|safe}}
                     </div>
-                </div>  
+                </div>
             {% endfor%}
 
         </div>
-        {% if notes %}
-            <div class="notes">
-                <h4>Notes</h4>
-                {% for note in notes %}
-                    <div class="note">
-                        {{ note.content|safe}}
-                    </div>
-                {% endfor%}
+
+
+        <div class="right-box">
+            {% if notes %}
+                <div class="notes">
+                    <h4>Notes</h4>
+                    {% for note in notes %}
+                        <div class="note">
+                            {{ note.content|safe}}
+                        </div>
+                    {% endfor%}
+                </div>
+            {% else %}
+                <div class="notes"></div>
+            {% endif %}
+            
+            <div class="left-box">
+                <div class="item-group">
+                    <div class="title">Recent Posts</div>
+                    <ul class="posts">
+                        {% for post in tops %}
+                            <li><a href="/post/{{ post.pid}}">{{ post.title }}</a></li>
+                        {% endfor %}
+                        {% for post in posts %}
+                            <li><a href="/post/{{ post.pid}}">{{ post.title }}</a></li>
+                        {% endfor %}
+
+                    </ul>
+                </div>
+                <div class="item-group">
+                    <div class="title">Categories</div>
+                    <ul class="categories">
+                        {% for tag in tags %}
+                            <li><a href="#">{{ tag.name }}</a></li>
+                            <li><a href="#">{{ tag.name }}</a></li>
+                            <li><a href="#">{{ tag.name }}</a></li>
+                            <li><a href="#">{{ tag.name }}</a></li>
+                            <li><a href="#">{{ tag.name }}</a></li>
+                        {% endfor %}
+
+                    </ul>
+                </div>
+                <div class="item-group">
+                    <div class="title">Links</div>
+                    <ul class="link posts">
+                        <a href="#"><li>Github</li></a>
+                    </ul>
+                </div>
             </div>
-        {% else %}      
-            <div class="notes"></div>
-        {% endif %}
+        </div>
+
+
+
     </div>
 </div>
 
@@ -89,7 +106,7 @@
                 txt = txt.replace(/<div>###### (.+?)<\/div>/ig,"<h6>$1</h6>");
                 $(this).html(txt)
             });
-                    
+
         });
 
     </script>

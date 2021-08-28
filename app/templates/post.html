@@ -26,9 +26,9 @@
                     <img src="{{ url_for('static',filename='img/返回.svg') }}" alt="">
                     返回主页
                 </a>
-                <a href="" class="next_post">
-                    <img src="{{ url_for('static',filename='img/右.svg') }}" alt="">
-                    下篇文章
+                <a href="/modifyPost/{{ post.pid }}" class="modify">
+                    <img src="{{ url_for('static',filename='img/修改.svg') }}" alt="">
+                    修改文章
                 </a>
             </div>
         </div>
@@ -46,7 +46,7 @@
         txt = txt.replace(/<div>##### (.+?)<\/div>/ig,"<h5>$1</h5>");
         txt = txt.replace(/<div>###### (.+?)<\/div>/ig,"<h6>$1</h6>");
         $(".post .content").html(txt)
-                
+
     });
 
 </script>

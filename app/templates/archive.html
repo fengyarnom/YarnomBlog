@@ -3,27 +3,27 @@
 <div class="page-archive">
     <div class="application-main">
        <div class="left-box">
-           
+
             <div class="title">
                Archive-Page
                <span class="time">{{ time.year }}</span>
             </div>
-            
-           
+
+
            <div class="yearList">
                 <p>人生其中慢慢途，如同古人，余亦逆旅行人也，故而行之所见闻，所获感，札于此中，以期有所记述，有所感悟。</p>
                 <p>至于明白章理、契机，遂有览先贤哲人之明非。又读于大学，得以学后生所谋生之技术，也一并记录于此。</p>
                <span>content</span>
                <ul>
-                    {% for x in range(2019,time.year+1)|reverse%}   
+                    {% for x in range(2021,time.year+1)|reverse%}   
                         <li><a href="?year={{ x }}">{{ x }}</a></li>
                     {% endfor%}
-                    
+
                </ul>
            </div>
        </div>
        <div class="right-box">
-            <div class="title"></div>   
+            <div class="title"></div>
             <ul>
                 {% for item in posts%}
                     <li><a href="/post/{{ item.pid }}">
@@ -33,14 +33,14 @@
                         <div class="post-title">
                             {{ item.title }}
                         </div>
-                         
+
                     </a></li>
-                {% endfor%} 
+                {% endfor%}
             </ul>
             <div class="archive-list">
 
             </div>
-            
+
         </div>
     </div>
 </div>
@@ -50,7 +50,7 @@
         year = txt.match(/\d+/g);
         $(".right-box .title").text(year[0]);
         month = '01'
-        $(".right-box ul li").each(function(){ 
+        $(".right-box ul li").each(function(){
             txt = $(this).html();
             year = txt.match(/\d+/g)
             if(month != year[2]){
@@ -60,7 +60,7 @@
             }
             classStr='.'+month
             appendStr = '<li>'+txt+'</li>'
-            $(classStr).append(appendStr); 
+            $(classStr).append(appendStr);
             $(this).remove();
         });
 
@@ -68,7 +68,3 @@
 
 </script>
 {% endblock %}
-
-
-
-

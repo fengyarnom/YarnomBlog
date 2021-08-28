@@ -9,7 +9,6 @@ from db_models import *
 from toolkit import *
 
 
-
 # Router
 @app.route("/",methods=['POST','GET'])
 def index():
@@ -101,6 +100,9 @@ def modifyPost(pid):
                 post.content = request.form.get("content")
                 post.tag = request.form.get("tag").strip()
                 post.isTop = request.form.get("isTop")
+                if(len(post.tag) != 0 and ArchiveClass.query.filter_by(name=post.tag).first() is None):
+                    req2 = ArchiveClass(name=post.tag)
+                    db.session.add(req2)
                 db.session.commit()
             return render_template('modifyPost.html',archiveClass=archiveClass,post=post)
         else:
@@ -115,7 +117,7 @@ def deletePost(pid):
             db.session.delete(post)
             db.session.commit()
             return ":)"
-            
+
         else:
             return redirect(url_for('login'))
     except Exception as e:

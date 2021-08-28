@@ -93,87 +93,95 @@ body {
     align-items: baseline;
 }
 
-.page-home .application-main .lately {
-    width: 15%;
-    border-right: 1px solid #dadada9e;
-    padding: 1rem;
+.page-home .application-main .left-box {
+    padding: 1rem 0;
 }
 
-.page-home .application-main .lately .title {
+.page-home .application-main .left-box .title {
     font-weight: bold;
     color: #3d3d3d;
-    margin-bottom: 2rem;
-    padding-left: 14px;
-}
-
-.page-home .application-main .lately .item-group {
     margin-bottom: 1rem;
 }
 
-.page-home .application-main .lately .item-group .subtitle {
-    font-weight: bold;
-    font-size: 14px;
-    color: rgba(61, 61, 61, 0.48);
-    margin-bottom: 0.5rem;
-    padding-left: 14px;
-    margin-top: 2em;
+.page-home .application-main .left-box .item-group {
+    margin-bottom: 3rem;
 }
 
-.page-home .application-main .lately .item-group .subtitle::after {
-    font-weight: bold;
-    content: " &";
-}
-
-.page-home .application-main .lately .item-group ul {
+.page-home .application-main .left-box .item-group .posts {
     margin: 0;
     padding: 0;
 }
 
-.page-home .application-main .lately .item-group ul li {
-    padding: 0.4rem 0;
+.page-home .application-main .left-box .item-group .posts li {
+    padding: 0.4rem 12px;
     border-radius: 6px;
+    font-size: 14px;
 }
 
-.page-home .application-main .lately .item-group ul li:hover {
+.page-home .application-main .left-box .item-group .posts li:hover {
     background-color: #c3bcbc45;;
 }
 
-.page-home .application-main .lately .item-group ul li a {
-    padding-left: 14px;
+.page-home .application-main .left-box .item-group .posts li a {
+
     font-size:14px;
 }
-
+.page-home .application-main .left-box .item-group .categories{
+    display: flex;
+    flex-direction: row;
+    margin-left: 14px;
+    flex-wrap: wrap;
+    font-size: 14px;
+}
+.page-home .application-main .left-box .item-group .categories li{
+    background-color: #0079ae;
+    color:white;
+    padding: 5px;
+    margin: 0.4em 6px;
+    margin-left: 0;
+    border-radius: 4px;
+}
+.page-home .application-main .left-box .item-group .categories li a{
+    color:white;
+}
+.page-home .application-main .left-box .item-group ul li:hover {
+    background-color: #0079ae;
+}
 .page-home .application-main .mainBox {
-    width: 40%;
+    width: 45%;
     line-height: 1.5rem;
     letter-spacing: 1px;
 }
 .page-home .application-main .mainBox .post{
     padding-bottom: 3em;
     margin-bottom: 3em;
-    border-bottom: 2px dashed #eee; 
+    border-bottom: 2px dashed #eee;
 }
 .page-home .application-main .mainBox .time {
     font-size: 14px;
     color: #aaa;
-    
+
 }
 .page-home .application-main .mainBox .title {
     font-size: 34px;
     padding: 0 0 0.5em 0;
     display: flex;
+    align-items: baseline;
     font-weight: 700;
     margin-top: 5px;
-    
+    flex-wrap: wrap;
+}
+.page-home .application-main .mainBox .title a{
+    line-height: 1.7;
 }
 .page-home .application-main .mainBox .title .pre{
     padding-right: 10px;
-    color:#d07474e0;
+    color:#d07474e0
 
-    
 }
 .page-home .application-main .mainBox .content{
     font-size:16px;
+    color:#3d3d3f;
 }
 .page-home .application-main .mainBox .content h1{
     font-size:24px;
@@ -204,14 +212,14 @@ body {
     content: '#### ';
 }
 .page-home .application-main .mainBox .content h5{
-    font-size:16px;
+    font-size:14px;
 }
 .page-home .application-main .mainBox .content h5::before{
     color:#2459abc4;;
     content: '##### ';
 }
 .page-home .application-main .mainBox .content h6{
-    font-size:16px;
+    font-size:12px;
 }
 .page-home .application-main .mainBox .content h6::before{
     color:#2459abc4;;
@@ -223,9 +231,10 @@ body {
     color: #dadada;
     padding-left: 12px;
 }
-
+.page-home .application-main .right-box{
+    width:15%;
+}
 .page-home .application-main .notes {
-    width: 15%;
     /* border-left: 1px solid #dadada9e; */
     /* padding-left: 3rem; */
 }
@@ -563,25 +572,25 @@ body {
     display: flex;
     font-size: 44px;
     font-family: Dauphin;
-    letter-spacing: 8px;  
-    
+    letter-spacing: 8px;
+
 }
 .page-archive .application-main .left-box .title span{
     font-size: 16px;
-    letter-spacing: 6px;  
-    
+    letter-spacing: 6px;
+
 }
 .page-archive .application-main .left-box .yearList{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    font-family: Dauphin;   
+    font-family: Dauphin;
 }
 .page-archive .application-main .left-box .yearList span{
     color:#ccc;
     font-size:15px;
     letter-spacing: 3px;
-    margin: 10px 0; 
+    margin: 10px 0;
 }
 .page-archive .application-main .left-box .yearList ul li{
     font-size: 23px;
@@ -613,7 +622,7 @@ body {
 }
 
 .page-archive .application-main .right-box .archive-list .month-tag::before{
-    content:'#';    
+    content:'#';
     color:#218abd;
     padding-right: 6px;
     font-weight:700;
@@ -632,11 +641,11 @@ body {
      margin:3px 4px;
      border-radius: 7px;
      width:40%;
-    
+
 }
 .page-archive .application-main .right-box .archive-list .month-ul li a{
     display: flex;
-    flex-direction: row;  
+    flex-direction: row;
 }
 .page-archive .application-main .right-box .archive-list .month-ul li a .time{
     display: none;
@@ -694,8 +703,8 @@ body {
 .page-admin .application-main .nav .menu-ul li:hover::before{
     content: '|';
     padding-right: 5px;
-    
-    
+
+
 }
 .page-admin .application-main .nav .menu-ul .now{
 
@@ -717,7 +726,7 @@ body {
     font-size:24px;
 }
 .page-admin .application-main .content-posts .title h1::before{
-    content:'#';    
+    content:'#';
     color:#218abd;
     padding-right: 6px;
     font-weight:700;
@@ -725,7 +734,7 @@ body {
 .page-admin .application-main .content-posts table{
     width:70%;
     text-align: center;
-    border-collapse:collapse;   
+    border-collapse:collapse;
 }
 .page-admin .application-main .content-posts table thead th{
     margin: 0 2em;
