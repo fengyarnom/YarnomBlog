@@ -93,47 +93,47 @@ body {
     align-items: baseline;
 }
 
-.page-home .application-main .left-box {
+.page-home .application-main {
     padding: 1rem 0;
 }
 
-.page-home .application-main .left-box .title {
+.page-home .application-main .title {
     font-weight: bold;
     color: #3d3d3d;
     margin-bottom: 1rem;
 }
 
-.page-home .application-main .left-box .item-group {
-    margin-bottom: 3rem;
+.page-home .application-main .item-group {
+    margin-bottom: 2rem;
 }
 
-.page-home .application-main .left-box .item-group .posts {
+.page-home .application-main  .item-group .posts {
     margin: 0;
     padding: 0;
 }
 
-.page-home .application-main .left-box .item-group .posts li {
+.page-home .application-main .item-group .posts li {
     padding: 0.4rem 12px;
     border-radius: 6px;
     font-size: 14px;
 }
 
-.page-home .application-main .left-box .item-group .posts li:hover {
+.page-home .application-main .item-group .posts li:hover {
     background-color: #c3bcbc45;;
 }
 
-.page-home .application-main .left-box .item-group .posts li a {
+.page-home .application-main .item-group .posts li a {
 
     font-size:14px;
 }
-.page-home .application-main .left-box .item-group .categories{
+.page-home .application-main .item-group .categories{
     display: flex;
     flex-direction: row;
     margin-left: 14px;
     flex-wrap: wrap;
     font-size: 14px;
 }
-.page-home .application-main .left-box .item-group .categories li{
+.page-home .application-main .item-group .categories li{
     background-color: #0079ae;
     color:white;
     padding: 5px;
@@ -141,10 +141,10 @@ body {
     margin-left: 0;
     border-radius: 4px;
 }
-.page-home .application-main .left-box .item-group .categories li a{
+.page-home .application-main  .item-group .categories li a{
     color:white;
 }
-.page-home .application-main .left-box .item-group ul li:hover {
+.page-home .application-main .item-group ul li:hover {
     background-color: #0079ae;
 }
 .page-home .application-main .mainBox {
@@ -235,8 +235,7 @@ body {
     width:15%;
 }
 .page-home .application-main .notes {
-    /* border-left: 1px solid #dadada9e; */
-    /* padding-left: 3rem; */
+    margin-bottom: 2em;
 }
 
 .page-home .application-main .notes .note {
