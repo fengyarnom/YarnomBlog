@@ -122,12 +122,47 @@ def deletePost(pid):
             return redirect(url_for('login'))
     except Exception as e:
         print(e)
+
+@app.route("/deleteNote/<pid>",methods=['POST', 'GET'])
+def deleteNotes(pid):
+    try:
+        if user_action.getUserConfirm():
+            notes = Note.query.filter_by(pid = pid).first()
+            db.session.delete(notes)
+            db.session.commit()
+            return ":)"
+
+        else:
+            return redirect(url_for('login'))
+    except Exception as e:
+        print(e)
 @app.route("/admin",methods=['POST', 'GET'])
 def admin():
     try:
         if user_action.getUserConfirm():
             posts = Post.query.order_by(Post.id.desc()).all()
             return render_template('admin.html',posts=posts)
+        else:
+            return redirect(url_for('login'))
+    except Exception as e:
+        print(e)
+
+@app.route("/admin/tags",methods=['POST', 'GET'])
+def admin_tags():
+    try:
+        if user_action.getUserConfirm():
+            tags = ArchiveClass.query.all()
+            return render_template('admin-tags.html',tags=tags)
+        else:
+            return redirect(url_for('login'))
+    except Exception as e:
+        print(e)
+@app.route("/admin/notes",methods=['POST', 'GET'])
+def admin_notes():
+    try:
+        if user_action.getUserConfirm():
+            notes = Note.query.all()
+            return render_template('admin-notes.html',notes=notes)
         else:
             return redirect(url_for('login'))
     except Exception as e:
@@ -157,6 +192,19 @@ def archive():
     ).all()
 
     return render_template('archive.html',time=datetime.now(),posts=posts)
+
+@app.route("/archive/tags/<tag>",methods=['POST', 'GET'])
+def archive_tags(tag):
+    if request.args.get("year"):
+        year = int(request.args.get("year"))
+    else:
+        year = datetime.now().year
+
+    posts = Post.query.filter(
+        (Post.time >= datetime(year, 1, 1)) & (Post.time <= datetime(year, 12, 31)) &(Post.tag == tag)
+    ).all()
+
+    return render_template('tags.html',time=datetime.now(),posts=posts,tag=tag)
 
 
 if __name__ == '__main__':

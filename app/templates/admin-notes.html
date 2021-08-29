@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock %}
+
+{% block applicationMain %}
+<div class="page-admin">
+    <div class="application-main">
+        {% include 'admin-nav.html' %}
+        <div class="content-posts">
+            <div class="title">
+                <h1>通告管理</h1>
+                <p>你可以通过下面的表格对数据库中通告进行简单的管理。</p>
+                <p>当然，你同样可以：<a href="/new-post">新建一篇通告</a></p>
+            </div>
+            {% for note in notes%}
+                <ul>
+                    <div class="note-title">
+                        {{ note.title }}
+                        <span>{{note.time}}</span>
+                        <div><a href="/deleteNote/{{ note.pid }}">删除</a></div>
+                    </div>
+                    <div class="note-content">
+                        {{ note.content |safe}}
+                    </div>
+                </ul>
+            {% endfor%}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

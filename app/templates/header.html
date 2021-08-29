@@ -2,7 +2,7 @@
     <div class="nav-group">
         <div class="title">
             <a href="/">
-                <img src="../static/img/郵件.svg" alt="">
+                <img src="{{url_for('static',filename='img/郵件.svg')}}" alt="">
                 Yarnom'Blog
             </a>
         </div>
@@ -10,16 +10,20 @@
     <div class="nav-group menu-list">
         <ul>
             <li><a href="/">
-                <img src="../static/img/主页 (1).svg" alt="">
+                <img src="{{url_for('static',filename='img/主页 (1).svg')}}" alt="">
                 主页
             </a></li>
             <li><a href="/archive">
-                <img src="../static/img/cc-archive.svg" alt="">
+                <img src="{{url_for('static',filename='img/cc-archive.svg')}}" alt="">
                 归档
             </a></li>
             <li><a href="">
-                <img src="../static/img/./关于.svg" alt="">
+                <img src="{{url_for('static',filename='img/关于.svg')}}" alt="">
                 关于我
+            </a></li>
+            <li><a href="/admin">
+                <img src="{{url_for('static',filename='img/登录.svg')}}" alt="">
+                后端
             </a></li>
         </ul>
     </div>

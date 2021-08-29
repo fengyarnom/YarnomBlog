@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock %}
+
+{% block applicationMain %}
+<div class="page-admin">
+    <div class="application-main">
+        {% include 'admin-nav.html' %}
+        <div class="content-posts">
+            <div class="title">
+                <h1>标签管理</h1>
+                <p>你可以通过下面的表格对数据库中标签进行简单的管理。</p>
+            </div>
+            <table>
+                <tbody>
+                    {% for tag in tags %}
+                    <tr>
+                        <td>{{ tag.name }}</td>
+                    </tr>
+                    {% endfor%}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

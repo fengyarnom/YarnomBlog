@@ -666,6 +666,14 @@ body {
 }
 .page-admin .application-main .nav .goBackIndex{
     font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.page-admin .application-main .nav .goBackIndex img{
+    width:12px;
+    height:12px;
+    padding-right:5px;
 }
 .page-admin .application-main .nav .title{
     font-size:30px;
@@ -681,30 +689,27 @@ body {
 .page-admin .application-main .nav .menu{
     margin-top:2em;
 }
-.page-admin .application-main .nav .menu-ul{
-    width:70%;
-}
-.page-admin .application-main .nav .menu-ul .lists-title{
+
+.page-admin .application-main .nav .lists-title{
     letter-spacing: 3px;
     margin-bottom: 10px;
     font-size: 14px;
     font-weight: bold;
+}
+.page-admin .application-main .nav .menu-ul{
+    width:70%;
 }
 .page-admin .application-main .nav .menu-ul li{
     font-size:14px;
     margin:6px 0;
     border-radius: 5px;
     letter-spacing: 2px;
+    padding:4px 10px;
 }
 .page-admin .application-main .nav .menu-ul li:hover{
-    padding:3px 0px 3px 0px;
+    background-color: #eee;
 }
-.page-admin .application-main .nav .menu-ul li:hover::before{
-    content: '|';
-    padding-right: 5px;
 
-
-}
 .page-admin .application-main .nav .menu-ul .now{
 
 }
@@ -718,8 +723,17 @@ body {
     margin-top: 2em;
     margin-bottom: 2em;
 }
+.page-admin .application-main .content-posts ul .note-title{
+    margin-top: 2em;
+    margin-bottom: 10px;
+    font-size:18px;
+    font-weight: bold;
+}
 .page-admin .application-main .content-posts .title p{
     font-size:15px;
+}
+.page-admin .application-main .content-posts .title p a{
+    text-decoration: underline;
 }
 .page-admin .application-main .content-posts .title h1{
     font-size:24px;
@@ -731,21 +745,33 @@ body {
     font-weight:700;
 }
 .page-admin .application-main .content-posts table{
-    width:70%;
-    text-align: center;
+    width:80%;
     border-collapse:collapse;
-}
-.page-admin .application-main .content-posts table thead th{
-    margin: 0 2em;
-    border-bottom:3px solid #eee;
 }
 .page-admin .application-main .content-posts table tbody tr{
     border-radius: 5px;
 }
-.page-admin .application-main .content-posts table tbody tr:hover{
-    background-color: #eee;
-}
+
 .page-admin .application-main .content-posts table tbody td{
-    padding: 10px 0;
+    padding: 10px 20px;
     margin:0;
+}
+.page-admin .application-main .content-posts .head-ul{
+    width:70%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+.page-admin .application-main .content-posts .head-ul ul{
+
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    display: none;
+}
+.page-admin .application-main .content-posts .head-ul ul li{
+    width: 4em;
+}
+.page-admin .application-main .content-posts .head-ul ul span{
+    padding:0 10px;
 }

@@ -1,13 +1,23 @@
 <div class="nav">
-    <a href="" class="goBackIndex">返回主页</a>
+    <div class="goBackIndex">
+        <img src="{{url_for('static',filename='img/返回.svg')}}" alt="">
+        <a href="/" class="goBackIndex">返回主页</a>
+    </div>
+
     <div class="title">Admin-Page</div>
     <span>这里是博客后端</span>
     <div class="menu">
+        <div class="lists-title">基础管理</div>
         <ul class="menu-ul">
-            <div class="lists-title">基础管理</div>
-            <a href="/admin" class="now"><li>文章管理</li></a>
-            <a href=""><li>文章管理</li></a>
-            <a href=""><li>文章管理</li></a>
+            <a href="/admin" class="now">
+                <li>文章管理</li>
+            </a>
+            <a href="/admin/tags">
+                <li>标签管理</li>
+            </a>
+            <a href="/admin/notes">
+                <li>通告管理</li>
+            </a>
         </ul>
     </div>
 </div>

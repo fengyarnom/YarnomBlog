@@ -1,12 +1,13 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
 {% block applicationMain %}
 <div class="page-archive">
     <div class="application-main">
        <div class="left-box">
 
             <div class="title">
-               Archive-Page
+               Tags-Page
                <span class="time">{{ time.year }}</span>
+
             </div>
 
 
@@ -48,7 +49,7 @@
     $(document).ready(function(){
         var txt = $(".right-box li:first-child").text();
         year = txt.match(/\d+/g);
-        $(".right-box .title").text(year[0]);
+        $(".right-box .title").html("<p>& {{ tag }}</p>"+year[0]);
         month = '01'
         $(".right-box ul li").each(function(){
             txt = $(this).html();
