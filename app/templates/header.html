@@ -7,6 +7,9 @@
             </a>
         </div>
     </div>
+    <div class="nav-group mobile-menu-ul">
+        <img src="{{url_for('static',filename='img/Menu.svg')}}" alt="">
+    </div>
     <div class="nav-group menu-list">
         <ul>
             <li><a href="/">
@@ -28,3 +31,40 @@
         </ul>
     </div>
 </nav>
+<div class="mobile-menu-ul-show">
+    <ul>
+        <li><a href="/">
+            <img src="{{url_for('static',filename='img/主页 (1).svg')}}" alt="">
+            主页
+        </a></li>
+        <li><a href="/archive">
+            <img src="{{url_for('static',filename='img/cc-archive.svg')}}" alt="">
+            归档
+        </a></li>
+        <li><a href="">
+            <img src="{{url_for('static',filename='img/关于.svg')}}" alt="">
+            关于我
+        </a></li>
+        <li><a href="/admin">
+            <img src="{{url_for('static',filename='img/登录.svg')}}" alt="">
+            后端
+        </a></li>
+    </ul>
+</div>
+<script>
+    $(document).ready(function(){
+
+        $(".mobile-menu-ul").click(function(){
+            $(".mobile-menu-ul-show").fadeToggle(800);
+        });
+        $(".mobile-menu-ul").blur(function(){
+            $(".mobile-menu-ul-show").fadeToggle(400);
+        });
+
+        // $(".tagName").blur(function(){
+        //     $(".showTagList").fadeToggle(800);
+        // });
+    });
+
+
+    </script>

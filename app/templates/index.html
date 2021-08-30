@@ -3,9 +3,6 @@
 {% block applicationMain %}
 <div class="page-home">
     <div class="application-main">
-
-
-
         <div class="mainBox">
             {% for item in tops %}
                 <div class="post">
@@ -100,8 +97,16 @@
                 txt = txt.replace(/<div>###### (.+?)<\/div>/ig,"<h6>$1</h6>");
                 $(this).html(txt)
             });
+            $(".mobile-menu-li").click(function(){
+                alert("A");
+                $(".mobile-menu-li-show").fadeToggle(800);
+            });
 
+            // $(".tagName").blur(function(){
+            //     $(".showTagList").fadeToggle(800);
+            // });
         });
+
 
     </script>
 {% endblock %}
