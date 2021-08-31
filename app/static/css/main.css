@@ -81,7 +81,7 @@ body {
         padding: 0 3em;
     }
     .page-home .application-main .mainBox {
-
+        line-height: 1.7em;
     }
     .page-home .application-main .mainBox .post{
         padding-bottom: 3em;
@@ -99,6 +99,7 @@ body {
         font-weight: 700;
         margin-top: 5px;
         flex-wrap: wrap;
+        line-height: 1.4em;
     }
     .page-home .application-main .mainBox .time {
         font-size: 14px;
@@ -115,8 +116,12 @@ body {
         color:#d07474e0;
 
     }
+    .page-home .application-main .mainBox .content{
+        line-height: 1.7em;
+    }
     .page-home .application-main .mainBox .content h1{
         font-size:24px;
+
     }
     .page-home .application-main .mainBox .content h1::before{
         color:#2459abc4;;
@@ -375,6 +380,7 @@ body {
     }
 
 }
+
 @media only screen and (min-width: 768px) {
     .flex{
         display:flex;
@@ -520,6 +526,9 @@ body {
         margin-bottom: 3em;
         border-bottom: 2px dashed #eee;
     }
+    .page-home .application-main .mainBox .post img{
+        width:100%;
+    }
     .page-home .application-main .mainBox .time {
         font-size: 14px;
         color: #aaa;
@@ -535,7 +544,7 @@ body {
         flex-wrap: wrap;
     }
     .page-home .application-main .mainBox .title a{
-        line-height: 1.7;
+        line-height: 1.7em;
     }
     .page-home .application-main .mainBox .title .pre{
         padding-right: 10px;
@@ -545,6 +554,7 @@ body {
     .page-home .application-main .mainBox .content{
         font-size:16px;
         color:#3d3d3f;
+        line-height: 1.7em;
     }
     .page-home .application-main .mainBox .content h1{
         font-size:24px;
@@ -732,6 +742,9 @@ body {
         line-hight:1.7;
         outline:none;
     }
+    .page-newPost .application-main .post-form .form-content img{
+        width:100%;
+    }
     .page-newPost .application-main .send-box{
         display:flex;
         justify-content: flex-end;
@@ -822,7 +835,9 @@ body {
         padding-top:1em;
 
     }
-
+    .page-post .application-main .post img{
+        width:100%;
+    }
     .page-post .application-main .post .title{
         font-size:30px;
         font-weight:bold;

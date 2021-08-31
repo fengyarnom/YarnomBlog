@@ -10,15 +10,20 @@
                 </div>
                 <div class="form-group">
                     <div class="form-content" name="content" contenteditable="true" >
-                        
+
                     </div>
                 </div>
-                
+
                 <div class="form-group send-box">
                     <div class="button">PUBLISH</div>
                 </div>
-                
+
+
+
             </form>
+            <div class="AAA">
+
+            </div>
             <div class="right-box">
                 <div class="archive-box">
                     <h4>归档设置</h4>
@@ -32,15 +37,23 @@
                                 {% endfor %}
                             </ul>
                         </div>
-                        
+
                     </div>
 
                 </div>
                 <div class="option">
                     <h4>文章设置</h4>
-                    <label><input class="checkbox set-top" type="checkbox"> 置顶此文章 </label> 
-                    <label><input class="checkbox set-note" type="checkbox"> 设置此文章为通告 </label> 
-                    
+                    <label><input class="checkbox set-top" type="checkbox"> 置顶此文章 </label>
+                    <label><input class="checkbox set-note" type="checkbox"> 设置此文章为通告 </label>
+                </div>
+                <div class="image">
+                    <h4>图片上传</h4>
+                    <from class="imgForm">
+                        <input id="input-img" type="file"  size="30" name="pic"/>
+                        <button class="uploadImg" type="button" name="button">添加图片</button>
+                    </from>
+                    <div id="img1" style="height:25%;width:25%;"></div>
+
                 </div>
             </div>
         </div>
@@ -52,11 +65,11 @@
                 var title = $(".form-title").val();
                 var content = $(".form-content").html();
                 var archiveClass = $(".tagName").val();
-                
+
                 var isTop = 0
                 if($(".set-top").is(":checked")){
                     isTop = 1;
-                } 
+                }
 
                 var post_class = ''
                 if($(".set-note").is(':checked')){
@@ -87,7 +100,27 @@
                 var tagName = $(this).text();
                 $(".tagName").val(tagName);
             });
-        });
-    
+            $('.uploadImg').click(function () {
+            var f=document.getElementById('input-img').files[0];
+            var formdata=new FormData();
+            formdata.append('pic',f)
+            // console.log(formdata.get('pic'))
+            // let formFile = new FormData(temp[0]);
+		     $.ajax({
+                url:"/uploadImg",
+                type:"POST",
+                data:formdata,
+                processData:false,
+                contentType:false,
+                success: function (data) {
+                    var img_url = "<img src='"+data+"' alt=''/>";
+                    $(".form-content").append(img_url);
+
+                }
+            });
+         });
+});
+
+
     </script>
 {% endblock %}

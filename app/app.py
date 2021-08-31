@@ -7,6 +7,7 @@ from markupsafe import Markup
 from initialize import *
 from db_models import *
 from toolkit import *
+from web_config import *
 
 
 # Router
@@ -85,6 +86,21 @@ def newPost():
                 db.session.commit()
 
             return render_template('newPost.html',archiveClass=archiveClass)
+        else:
+            return redirect(url_for('login'))
+    except Exception as e:
+        print(e)
+@app.route("/uploadImg",methods=['POST'])
+def uploadImg():
+    try:
+        if user_action.getUserConfirm():
+            basedir = os.path.abspath(os.path.dirname(__file__))
+            img = request.files.get('pic')
+            path=basedir+'/static/upload/imgs/'
+            img_path=path+img.filename
+            img.save(img_path)
+            url = "http://"+ web_config["host"]+"/static/upload/imgs/"+img.filename;
+            return url
         else:
             return redirect(url_for('login'))
     except Exception as e:
@@ -208,4 +224,4 @@ def archive_tags(tag):
 
 
 if __name__ == '__main__':
-    app.run(debug=True,host='0.0.0.0',port=8080)
+    app.run(debug=True,host=web_config["host"],port=80)
