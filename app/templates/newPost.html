@@ -21,9 +21,7 @@
 
 
             </form>
-            <div class="AAA">
 
-            </div>
             <div class="right-box">
                 <div class="archive-box">
                     <h4>归档设置</h4>
@@ -52,7 +50,6 @@
                         <input id="input-img" type="file"  size="30" name="pic"/>
                         <button class="uploadImg" type="button" name="button">添加图片</button>
                     </from>
-                    <div id="img1" style="height:25%;width:25%;"></div>
 
                 </div>
             </div>
@@ -113,8 +110,7 @@
                 processData:false,
                 contentType:false,
                 success: function (data) {
-                    var img_url = "<img src='"+data+"' alt=''/>";
-                    $(".form-content").append(img_url);
+                    $(".form-content").append(`<img src="../static/upload/imgs/${data}"/>`);
 
                 }
             });

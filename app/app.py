@@ -99,8 +99,7 @@ def uploadImg():
             path=basedir+'/static/upload/imgs/'
             img_path=path+img.filename
             img.save(img_path)
-            url = "http://"+ web_config["host"]+"/static/upload/imgs/"+img.filename;
-            return url
+            return img.filename
         else:
             return redirect(url_for('login'))
     except Exception as e:
@@ -224,4 +223,4 @@ def archive_tags(tag):
 
 
 if __name__ == '__main__':
-    app.run(debug=True,host=web_config["host"],port=80)
+    app.run(debug=True,host='0.0.0.0',port=80)

@@ -527,7 +527,7 @@ body {
         border-bottom: 2px dashed #eee;
     }
     .page-home .application-main .mainBox .post img{
-        width:100%;
+        max-width:100%;
     }
     .page-home .application-main .mainBox .time {
         font-size: 14px;
@@ -743,7 +743,7 @@ body {
         outline:none;
     }
     .page-newPost .application-main .post-form .form-content img{
-        width:100%;
+        max-width:100%;
     }
     .page-newPost .application-main .send-box{
         display:flex;
@@ -836,7 +836,7 @@ body {
 
     }
     .page-post .application-main .post img{
-        width:100%;
+        max-width:100%;
     }
     .page-post .application-main .post .title{
         font-size:30px;
