@@ -45,7 +45,7 @@
         txt = txt.replace(/<div>#### (.+?)<\/div>/ig,"<h4>$1</h4>");
         txt = txt.replace(/<div>##### (.+?)<\/div>/ig,"<h5>$1</h5>");
         txt = txt.replace(/<div>###### (.+?)<\/div>/ig,"<h6>$1</h6>");
-        txt = txt.replace(/<div>```<\/div><div>(.+?)<\/div><div>```<\/div>/ig,"<div class='highlight-code'><pre>$1</pre></div>");
+        txt = txt.replace(/<div>```<\/div>(.+?)<div>```<\/div>/ig,"<div class='highlight-code'><pre>$1</pre></div>");
         $(".post .content").html(txt)
 
     });
