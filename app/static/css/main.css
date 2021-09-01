@@ -123,6 +123,25 @@ pre {
     .page-home .application-main .mainBox .content{
         line-height: 1.7em;
     }
+    .page-home .application-main .mainBox .content .highlight-code{
+        /* background: rgb(40, 44, 52); */
+        background-color: #f7f7f9;
+        border: 1px solid #e1e1e8;
+        border-radius: 5px;
+        margin-top: 25px;
+        margin-left: -30px;
+        margin-right: -30px;
+        margin-bottom: 25px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .page-home .application-main .mainBox .content .highlight-code .highlight-before{
+        color: #218abd;
+    }
+    .page-home .application-main .mainBox .content .highlight-code pre{
+        padding:0.3em 0;
+        font-size: 14px;
+    }
     .page-home .application-main .mainBox .content h1{
         font-size:24px;
 
@@ -286,13 +305,12 @@ pre {
         flex-direction: row;
         align-items: baseline;
         justify-content: space-evenly;
-        padding: 0 2em;
+        padding: 0 3em;
     }
     .page-post .application-main .post{
         display:flex;
         flex-direction: column;
         align-items: flex-start;
-        padding-top:1em;
 
     }
 
@@ -315,9 +333,28 @@ pre {
 
     .page-post .application-main .post .content{
         padding-top:1em;
+
         line-height:24px;
-        letter-spacing: 1px;
         min-height:500px;
+    }
+    .page-post .application-main .post .content .highlight-code{
+        /* background: rgb(40, 44, 52); */
+        background-color: #f7f7f9;
+        border: 1px solid #e1e1e8;
+        border-radius: 5px;
+            /* margin-top: 25px;
+            margin-left: -30px;
+            margin-right: -30px;
+            margin-bottom: 25px;
+            padding-left: 30px;
+            padding-right: 30px; */
+    }
+    .page-post .application-main .post .content .highlight-code .highlight-before{
+        color: #218abd;
+    }
+    .page-post .application-main .post .content .highlight-code pre{
+        padding:0.3em 10px;
+        /* font-size: 14px; */
     }
     .page-post .application-main .post .content h1{
         font-size:24px;
