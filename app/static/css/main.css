@@ -19,6 +19,10 @@ body {
     display: flex;
     flex-direction: column;
 }
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
 @media only screen and (max-width: 768px) {
     .public-nav {
         display: flex;
