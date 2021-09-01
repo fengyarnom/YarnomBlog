@@ -570,6 +570,9 @@ body {
         padding-left: 30px;
         padding-right: 30px;
     }
+    .page-home .application-main .mainBox .content .highlight-code .highlight-before{
+        color: #218abd;
+    }
     .page-home .application-main .mainBox .content .highlight-code pre{
         padding:0.3em 0;
         font-size: 14px;
@@ -891,6 +894,9 @@ body {
         margin-bottom: 25px;
         padding-left: 30px;
         padding-right: 30px;
+    }
+    .page-post .application-main .post .content .highlight-code .highlight-before{
+        color:#218abd;;
     }
     .page-post .application-main .post .content .highlight-code pre{
         padding:0.3em 0;

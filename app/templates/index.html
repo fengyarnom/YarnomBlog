@@ -99,6 +99,16 @@
 
                 txt = txt.replace(/<div>```<\/div>(.+?)<div>```<\/div>/ig,"<div class='highlight-code'><pre>$1</pre></div>");
                 $(this).html(txt)
+
+                $(this).find(".highlight-code div").each(function(){
+                    txt = $(this).html().trim();
+                    txt = txt.replace(/(.+?) /,"<span class='highlight-before'>$1 </span>");
+                    txt = txt.replace(/&lt;(.+?)&gt;/g,"<span class='highlight-before'>&lt;$1&gt;</span>");
+                    txt = txt.replace(/&lt;(.+?)\/&gt;/g,"<span class='highlight-before'>&lt;$1&gt;</span>");
+                    $(this).html(txt)
+
+                 });
+
             });
             $(".mobile-menu-li").click(function(){
                 alert("A");

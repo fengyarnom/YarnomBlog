@@ -46,7 +46,20 @@
         txt = txt.replace(/<div>##### (.+?)<\/div>/ig,"<h5>$1</h5>");
         txt = txt.replace(/<div>###### (.+?)<\/div>/ig,"<h6>$1</h6>");
         txt = txt.replace(/<div>```<\/div>(.+?)<div>```<\/div>/ig,"<div class='highlight-code'><pre>$1</pre></div>");
+
         $(".post .content").html(txt)
+
+        $(".post .content pre div").each(function(){
+            txt = $(this).html().trim();
+            txt = txt.replace(/(.+?) /,"<span class='highlight-before'>$1 </span>");
+            txt = txt.replace(/&lt;(.+?)&gt;/g,"<span class='highlight-before'>&lt;$1&gt;</span>");
+            txt = txt.replace(/&lt;(.+?)\/&gt;/g,"<span class='highlight-before'>&lt;$1&gt;</span>");
+            $(this).html(txt)
+
+         });
+        // txt  = $(".content pre").html().trim();
+        // txt = txt.replace(/<div>(.+?) /,"<span class='highlight-before'>$1 </span>");
+        // $(".post .content pre").html(txt)
 
     });
 
