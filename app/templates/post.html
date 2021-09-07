@@ -12,32 +12,27 @@
                    发布时间：
                     <span>{{ post.time }}</span>
             </div>
-            <div class="content">
+            <div class="public-post-content">
                 {{ post.content|safe}}
             </div>
             <div class="footer">
-                结束
+                本文到此结束
             </div>
         </div>
 
-        <div class="right-box">
-            <div class="block">
-                <a href="/" class="come_back_index">
-                    <img src="{{ url_for('static',filename='img/返回.svg') }}" alt="">
-                    返回主页
-                </a>
-                <a href="/modifyPost/{{ post.pid }}" class="modify">
+        <div class="options">
+            <ul>
+                <li><a href="/modifyPost/{{ post.pid }}" class="modify">
                     <img src="{{ url_for('static',filename='img/修改.svg') }}" alt="">
                     修改文章
-                </a>
-            </div>
+                </a></li>
+            </ul>
         </div>
-
     </div>
 </div>
 <script>
     $(document).ready(function(){
-        txt  = $(".post .content").html().trim();
+        txt  = $(".post .public-post-content").html().trim();
         txt = txt.replace(/(.+?)(<div>)/,"<div>$1</div><div>");
         txt = txt.replace(/<div># (.+?)<\/div>/ig,"<h1>$1</h1>");
         txt = txt.replace(/<div>## (.+?)<\/div>/ig,"<h2>$1</h3>");
@@ -47,9 +42,9 @@
         txt = txt.replace(/<div>###### (.+?)<\/div>/ig,"<h6>$1</h6>");
         txt = txt.replace(/<div>```<\/div>(.+?)<div>```<\/div>/ig,"<div class='highlight-code'><pre>$1</pre></div>");
 
-        $(".post .content").html(txt)
+        $(".post .public-post-content").html(txt)
 
-        $(".post .content pre div").each(function(){
+        $(".post .public-post-content pre div").each(function(){
             txt = $(this).html().trim();
             txt = txt.replace(/(.+?) /,"<span class='highlight-before'>$1 </span>");
             txt = txt.replace(/&lt;(.+?)&gt;/g,"<span class='highlight-before'>&lt;$1&gt;</span>");
@@ -57,6 +52,7 @@
             $(this).html(txt)
 
          });
+         $(".nav-notes-phone img").hide();
         // txt  = $(".content pre").html().trim();
         // txt = txt.replace(/<div>(.+?) /,"<span class='highlight-before'>$1 </span>");
         // $(".post .content pre").html(txt)

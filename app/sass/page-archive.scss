@@ -1,0 +1,196 @@
+@media only screen and (min-width: 768px) {
+    .page-archive{
+        .application-main{
+            display: flex;
+            flex-direction:row;
+            justify-content: space-evenly;
+            padding-top: 1em;
+
+            .left-box{
+                width: 30%;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                padding-right: 2em;
+                border-right: 1px solid #eee;
+                .title{
+                    display: flex;
+                    font-size: 44px;
+                    font-family: Dauphin;
+                    letter-spacing: 8px;
+                    span{
+                        font-size: 16px;
+                        letter-spacing: 6px;
+                    }
+                }
+                .yearList{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    font-family: Dauphin;
+                    span{
+                        color:#ccc;
+                        font-size:15px;
+                        letter-spacing: 3px;
+                        margin: 10px 0;
+                    }
+                    li{
+                        font-size: 23px;
+                        letter-spacing: 5px;
+                        &::before{
+                            content: "- ";
+                        }
+                    }
+
+                }
+            }
+            .right-box{
+                width: 40%;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+
+                .title{
+                    font-family: 'Dauphin';
+                    font-size:32px;
+                    margin-bottom: 20px;
+                }
+                .archive-list{
+                    .month-tag{
+                        font-family: 'Dauphin';
+                        font-size:24px;
+                        letter-spacing: 4px;
+                        &:before{
+                            content:'#';
+                            color:#218abd;
+                            padding-right: 6px;
+                            font-weight:700;
+                        }
+                    }
+                    .month-ul{
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        margin-bottom: 2em;
+                        li{
+                             border:1px solid #eee;
+                             padding: 10px 15px;
+                             margin:3px 4px;
+                             border-radius: 7px;
+                             width:40%;
+                             a{
+                                 display: flex;
+                                 flex-direction: row;
+                                 .time{
+                                     display: none;
+                                     font-size:18px;
+                                     font-family: Dauphin;
+                                     padding-right: 1em;
+                                     color:#ccc;
+                                 }
+                             }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// Mobile Phone
+@media only screen and (max-width: 767px) {
+    .page-archive{
+        .application-main{
+            padding:0 2em;
+            .left-box{
+                padding-bottom: 2em;
+                .title{
+                    display: flex;
+                    font-size: 30px;
+                    font-family: Dauphin;
+                    letter-spacing: 8px;
+                    justify-content: center;
+                    span{
+                        font-size: 16px;
+                        letter-spacing: 6px;
+                        display: none;
+
+                    }
+                }
+                .yearList{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    font-family: Dauphin;
+                    justify-content: center;
+                    align-items: center;
+                    span{
+                        color:#ccc;
+                        font-size:15px;
+                        letter-spacing: 3px;
+                        margin: 10px 0;
+                    }
+                    p{
+                        display: none;
+                    }
+                    ul{
+                        li{
+                            font-size: 16px;
+                            letter-spacing: 5px;
+                        }
+                    }
+                }
+            }
+            .right-box{
+                width: 80%;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                .title{
+                    font-family: 'Dauphin';
+                    font-size:32px;
+                    margin-bottom: 20px;
+                }
+                .archive-list{
+                    .month-tag{
+                        font-family: 'Dauphin';
+                        font-size:24px;
+                        letter-spacing: 4px;
+                        &::before{
+                            content:'#';
+                            color:#218abd;
+                            padding-right: 6px;
+                            font-weight:700;
+                        }
+                    }
+                    .month-ul{
+                        display: flex;
+                        flex-direction: column;
+                        flex-wrap: wrap;
+                        margin-bottom: 2em;
+                        li{
+                             border:1px solid #eee;
+                             padding: 10px 15px;
+                             margin:3px 4px;
+                             border-radius: 7px;
+                             width:100%;
+                             a{
+                                 display: flex;
+                                 flex-direction: row;
+                                 .time{
+                                     display: none;
+                                     font-size:18px;
+                                     font-family: Dauphin;
+                                     padding-right: 1em;
+                                     color:#ccc;
+                                 }
+                             }
+
+                        }
+                    }
+
+
+                }
+            }
+        }
+    }
+}

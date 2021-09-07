@@ -1,16 +1,22 @@
 <nav class="public-nav">
-    <div class="nav-group">
-        <div class="title">
-            <a href="/">
-                <img src="{{url_for('static',filename='img/郵件.svg')}}" alt="">
-                Yarnom'Blog
-            </a>
+    <div class="nav-group-1">
+        <div class="nav-menu-phone">
+            <img src="{{url_for('static',filename='img/Menu.svg')}}" alt="">
         </div>
+        <div class="nav-title">
+            <div class="title">
+                <a href="/">
+                    <img src="{{url_for('static',filename='img/郵件.svg')}}" alt="">
+                    Yarnom'Blog
+                </a>
+            </div>
+        </div>
+        <div class="nav-notes-phone">
+            <img src="{{url_for('static',filename='img/表单 (1).svg')}}" alt="">
+        </div>
+
     </div>
-    <div class="nav-group mobile-menu-ul">
-        <img src="{{url_for('static',filename='img/Menu.svg')}}" alt="">
-    </div>
-    <div class="nav-group menu-list">
+    <div class="nav-menu">
         <ul>
             <li><a href="/">
                 <img src="{{url_for('static',filename='img/主页 (1).svg')}}" alt="">
@@ -22,7 +28,7 @@
             </a></li>
             <li><a href="">
                 <img src="{{url_for('static',filename='img/关于.svg')}}" alt="">
-                关于我
+                关于
             </a></li>
             <li><a href="/admin">
                 <img src="{{url_for('static',filename='img/登录.svg')}}" alt="">
@@ -30,40 +36,23 @@
             </a></li>
         </ul>
     </div>
+    <div class="nav-sidebar">
+
+    </div>
 </nav>
-<div class="mobile-menu-ul-show">
-    <ul>
-        <li><a href="/">
-            <img src="{{url_for('static',filename='img/主页 (1).svg')}}" alt="">
-            主页
-        </a></li>
-        <li><a href="/archive">
-            <img src="{{url_for('static',filename='img/cc-archive.svg')}}" alt="">
-            归档
-        </a></li>
-        <li><a href="">
-            <img src="{{url_for('static',filename='img/关于.svg')}}" alt="">
-            关于我
-        </a></li>
-        <li><a href="/admin">
-            <img src="{{url_for('static',filename='img/登录.svg')}}" alt="">
-            后端
-        </a></li>
-    </ul>
-</div>
 <script>
     $(document).ready(function(){
 
-        $(".mobile-menu-ul").click(function(){
-            $(".mobile-menu-ul-show").fadeToggle(800);
-        });
-        $(".mobile-menu-ul").blur(function(){
-            $(".mobile-menu-ul-show").fadeToggle(400);
+        $(".nav-menu-phone").click(function(){
+            $(".nav-menu").append($(".options"));
+            $(".nav-menu").toggle(600);
         });
 
-        // $(".tagName").blur(function(){
-        //     $(".showTagList").fadeToggle(800);
-        // });
+        $(".nav-notes-phone").click(function(){
+            $(".nav-sidebar").append($(".sidebar"));
+            $(".sidebar").toggle(600);
+        });
+
     });
 
 

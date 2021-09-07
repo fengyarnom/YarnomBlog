@@ -1,0 +1,148 @@
+@media only screen and (min-width: 768px) {
+    .page-home{
+        .application-main {
+            display: flex;
+            justify-content: space-around;
+            align-items: baseline;
+            padding:0 10%;
+            .posts {
+                width: 55%;
+                line-height: 1.5rem;
+                letter-spacing: 1px;
+                .post{
+                    padding-bottom: 3em;
+                    margin-bottom: 3em;
+                    border-bottom: 2px dashed #eee;
+                    img{
+                        max-width:100%;
+                    }
+                    .time {
+                        font-size: 14px;
+                        color: #aaa;
+                    }
+                    .title {
+                        font-size: 34px;
+                        padding: 0 0 0.5em 0;
+                        display: flex;
+                        align-items: baseline;
+                        font-weight: 700;
+                        margin-top: 5px;
+                        flex-wrap: wrap;
+                        a{
+                            line-height: 1.7em;
+                            .pre{
+                                padding-right: 6px;
+                                color:#d07474e0;
+                                font-family: "Garamond";
+                            }
+                        }
+                    }
+
+                }
+            }
+            .sidebar{
+                display: block;
+                width:20%;
+                h4{
+                    margin: 0.5em;
+                    font-size:15px;
+                    letter-spacing:2px;
+                }
+                .notes {
+                    margin-bottom: 2em;
+                    .note{
+                        border: 1px solid #dadada9e;
+                        border-radius: 4px;
+                        padding: 12px;
+                        font-size:14px;
+                        margin-bottom: 1em;
+                    }
+                }
+                .recentPosts,.myLinks{
+                    margin-bottom: 2em;
+                    .posts,.links{
+                        width:100%;
+                        li {
+                            padding: 0.4rem 12px;
+                            border-radius: 6px;
+                            font-size: 14px;
+                            &:hover {
+                                background-color: #c3bcbc45;;
+                            }
+                            a {
+                                font-size:14px;
+                            }
+                        }
+                    }
+
+                }
+                .categories{
+                    margin-bottom: 2em;
+                    .tag{
+                        display: flex;
+                        flex-direction: row;
+                        margin-left: 14px;
+                        flex-wrap: wrap;
+                        font-size: 14px;
+                        li{
+                            background-color: #0079ae;
+                            color:white;
+                            padding: 5px;
+                            margin: 0.4em 6px;
+                            margin-left: 0;
+                            border-radius: 4px;
+                            a{
+                                color:white;
+                            }
+                        }
+                    }
+
+                }
+
+            }
+        }
+    }
+}
+
+// Mobile Phone
+@media only screen and (max-width: 767px) {
+    .page-home{
+        padding: 0 3em;
+        .posts{
+            line-height: 1.7em;
+            .post{
+                padding-bottom: 3em;
+                margin-bottom: 3em;
+                border-bottom: 2px dashed #eee;
+                .title {
+                    font-size: 34px;
+                    padding: 0 0 0.5em 0;
+                    display: flex;
+                    align-items: baseline;
+                    font-weight: 700;
+                    margin-top: 5px;
+                    flex-wrap: wrap;
+                    line-height: 1.4em;
+                    .pre{
+                        padding-right: 10px;
+                        color:#d07474e0;
+                    }
+                }
+                .time {
+                    font-size: 14px;
+                    color: #aaa;
+                    span{
+                        font-size: 12px;
+                        color: #dadada;
+                        padding-left: 12px;
+                    }
+
+                }
+            }
+        }
+        .sidebar{
+            display: none;
+        }
+    }
+
+}

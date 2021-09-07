@@ -1,0 +1,226 @@
+// Computer
+@media only screen and (min-width: 768px) {
+    .page-newPost{
+        .application-main {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: baseline;
+            .post-form{
+                margin-top: 1rem;
+                margin-bottom: 3rem;
+                display: flex;
+                flex-direction: column;
+
+                width: 45%;
+                border: 1px solid #dadada9e;
+                border-radius: 4px;
+                box-shadow: 0 1px 5px #ddd;
+                .span-pid{
+                    display: none;
+                }
+                .form-group{
+                    margin: 0em 8rem;
+                    .form-title{
+                        border:none;
+                        border-bottom: 1px solid #73736cad;
+                        width:100%;
+                        outline: none;
+                        margin-bottom:2em;
+                        letter-spacing: 1.5px;
+                        font-weight: bold;
+                        font-size: 23px;
+                        margin: 3.5em 0 1.5em 0;
+                        padding-bottom:1em;
+                        &:focus {
+                            border-bottom: 1px solid #73736cad;
+                        }
+                    }
+                    .form-content{
+                        border:none;
+                        width:100%;
+                        outline: none;
+                        margin-bottom:2em;
+                        letter-spacing:1px;
+                        font-size:17px;
+                        min-height:600px;
+                        max-height:1200px;
+                        line-hight:1.7;
+                        outline:none;
+                    }
+                    .send-box{
+                        display:flex;
+                        justify-content: flex-end;
+                        padding-bottom:2em;
+                        .setting-box-phone{
+                            display: none;
+                        }
+                        .button{
+
+                            background:#0079ae;
+                            outline:none;
+                            border:1px solid #0079ae;
+                            color:white;
+                            border-radius:4px;
+                            padding:10px 15px;
+                            font-weight: bold;
+                        }
+                    }
+                }
+
+            }
+            .right-box{
+                display:flex;
+                flex-direction: column;
+                width:20%;
+                .set-tag{
+                    input{
+                        border:1px solid #c8c7cc;
+                        outline:none;
+                        font-size:14px;
+                        padding: 5px 12px;
+                        border-radius: 4px;
+
+                    }
+                    .showTagList{
+                        display: none;
+                    }
+                    ul{
+                        margin: 0;
+                        margin-top: 1em;
+                        padding: 0;
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        font-size:14px;
+                        li{
+                            background-color: #0079ae;
+                            color:white;
+                            padding: 5px;
+                            margin: 0.4em 6px;
+                            margin-left: 0;
+                            border-radius: 4px;
+                            cursor:pointer;
+
+                        }
+                    }
+                }
+                .option{
+                    display: flex;
+                    flex-direction: column;
+                    margin-top:1em;
+                    font-size:15px;
+                }
+            }
+        }
+    }
+
+}
+// Mobile Phone
+@media only screen and (max-width: 767px) {
+    .page-newPost{
+        .application-main {
+            padding:0 3em;
+            .post-form{
+                .form-group{
+                    .form-title{
+                        border:none;
+                        border-bottom: 1px solid #73736cad;
+                        width:100%;
+                        outline: none;
+                        letter-spacing: 1.5px;
+                        font-weight: bold;
+                        font-size: 23px;
+                        margin: 1em 0 1.5em 0;
+                        padding-bottom:1em;
+                        &:focus {
+                            border-bottom: 1px solid #73736cad;
+                        }
+                    }
+                    .form-content{
+                        border:none;
+                        width:100%;
+                        outline: none;
+                        margin-bottom:2em;
+                        letter-spacing:1px;
+                        font-size:17px;
+                        min-height:400px;
+                        max-height:1200px;
+                        line-hight:1.7;
+                        outline:none;
+                    }
+                    .send-box{
+                        display:flex;
+                        align-items: center;
+                        padding:10px 0;
+                        .setting-box-phone{
+                            background:#0079ae;
+                            padding:8px 15px;
+                            border-radius:4px;
+                            margin-right: 1em;
+                            img{
+                                width:18px;
+                                height:18px;
+                            }
+                        }
+                        .button{
+                            text-align: center;
+                            background:#0079ae;
+                            padding:8px 15px;
+                            border-radius:4px;
+                            width:60%;
+                            color:white;
+                            font-weight: bold;
+                            font-size:20px;
+                        }
+
+                    }
+
+
+                }
+            }
+            .right-box{
+                display:flex;
+                flex-direction: column;
+                display: none;
+                .set-tag{
+                    input{
+                        border:1px solid #c8c7cc;
+                        outline:none;
+                        font-size:14px;
+                        padding: 5px 12px;
+                        border-radius: 4px;
+
+                    }
+                    .showTagList{
+                        display: none;
+                    }
+                    ul{
+                        margin: 0;
+                        margin-top: 1em;
+                        padding: 0;
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        font-size:14px;
+                        li{
+                            background-color: #0079ae;
+                            color:white;
+                            padding: 5px;
+                            margin: 0.4em 6px;
+                            margin-left: 0;
+                            border-radius: 4px;
+                            cursor:pointer;
+
+                        }
+                    }
+                }
+                .option{
+                    display: flex;
+                    flex-direction: column;
+                    margin-top:1rem;
+                    font-size:15px;
+                }
+            }
+        }
+    }
+}

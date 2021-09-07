@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Yarnom'Blog</title>
-    <link rel="stylesheet" href=" {{url_for('static',filename='css/main.css')}}">
+    <title>Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/admin-main.css')}}">
 </head>
 <body>
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <div id="app">
         <div class="header">
-            {% include 'header.html' %}
+            {% block header %}
+                {% include 'admin-header.html' %}
+            {% endblock %}
         </div>
         <div class="main">
             {% block applicationMain %}

@@ -1,0 +1,21 @@
+@media only screen and (min-width: 768px) {
+    .header{
+        padding:1.5em 10em;
+        border-bottom: 1px solid #eee;
+        background-color: white;
+        box-shadow: 2px 1px 10px #eee;
+        .admin-public-nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            letter-spacing: 1.5px;
+            .nav-title{
+                .title{
+                    font-size: 28px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+}

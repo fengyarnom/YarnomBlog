@@ -1,0 +1,36 @@
+    @font-face {
+    font-family: Dauphin;
+    src: url("../font/Dauphin.ttf");
+}
+@font-face {
+    font-family: "Roboto-Regular";
+    src: url("../font/Roboto/Roboto-Regular-14.ttf");
+}
+
+a {
+    text-decoration: none;
+    color: #3d3d3d;
+}
+
+li {
+    list-style: none;
+}
+ul{
+    padding:0;
+    margin:0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Garamond;
+}
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+@import "public";
+@import "page-home";
+@import "page-archive";
+@import "page-post";
+@import "page-login";
+@import "page-newPost";

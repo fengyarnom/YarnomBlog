@@ -1,19 +1,20 @@
 {% extends 'base.html' %}
 
 {% block applicationMain %}
-<div id="like_button_container"></div>
 <div class="page-home">
     <div class="application-main">
-        <div class="mainBox">
+        <div class="posts">
             {% for item in tops %}
                 <div class="post">
                     <span class="time">{{ item.time }}</span>
                     <div class="title">
-                        <div class="pre">&</div>
-                        <a href="/post/{{ item.pid }}">{{ item.title }}</a>
+                        <a href="/post/{{ item.pid }}">
+                            <span class="pre">&</span>
+                            {{ item.title }}
+                        </a>
                         <span>置顶文章</span>
                     </div>
-                    <div class="content">
+                    <div class="public-post-content">
                         {{ item.content|safe}}
                     </div>
                 </div>
@@ -24,11 +25,13 @@
                 <div class="post">
                     <span class="time">{{ item.time }}</span>
                     <div class="title">
-                        <div class="pre">&</div>
-                        <a href="/post/{{ item.pid }}">{{ item.title }}</a>
+                        <a href="/post/{{ item.pid }}">
+                            <span class="pre">&</span>
+                            {{ item.title }}
+                        </a>
 
                     </div>
-                    <div class="content">
+                    <div class="public-post-content">
                         {{ item.content|safe}}
                     </div>
                 </div>
@@ -37,7 +40,7 @@
         </div>
 
 
-        <div class="right-box">
+        <div class="sidebar">
             {% if notes %}
                 <div class="notes">
                     <h4>Notes</h4>
@@ -51,8 +54,8 @@
                 <div class="notes"></div>
             {% endif %}
 
-                <div class="item-group">
-                    <div class="title">Recent Posts</div>
+                <div class="recentPosts">
+                    <h4>Recent Posts</h4>
                     <ul class="posts">
                         {% for post in tops %}
                             <li><a href="/post/{{ post.pid}}">{{ post.title }}</a></li>
@@ -63,19 +66,19 @@
 
                     </ul>
                 </div>
-                <div class="item-group">
-                    <div class="title">Categories</div>
-                    <ul class="categories">
+                <div class="categories">
+                    <h4>Categories</h4>
+                    <ul class="tag">
                         {% for tag in tags %}
                             <li><a href="/archive/tags/{{ tag.name }}">{{ tag.name }}</a></li>
                         {% endfor %}
 
                     </ul>
                 </div>
-                <div class="item-group">
-                    <div class="title">Links</div>
-                    <ul class="link posts">
-                        <a href="#"><li>Github</li></a>
+                <div class="myLinks">
+                    <h4>Links</h4>
+                    <ul class="links">
+                        <li><a href="https://github.com/fengyarnom">Github</a></li>
                     </ul>
                 </div>
             </div>
@@ -87,7 +90,7 @@
 
 <script>
         $(document).ready(function(){
-           $(".mainBox .content").each(function(){
+           $(".posts .public-post-content").each(function(){
                 txt  = $(this).html().trim();
                 txt = txt.replace(/(.+?)(<div>)/,"<div>$1</div><div>");
                 txt = txt.replace(/<div># (.+?)<\/div>/ig,"<h1>$1</h1>");
@@ -102,17 +105,13 @@
 
                 $(this).find(".highlight-code div").each(function(){
                     txt = $(this).html().trim();
-                    txt = txt.replace(/(.+?) /,"<span class='highlight-before'>$1 </span>");
+                    txt =  txt.replace(/(.+?) /,"<span class='highlight-before'>$1 </span>");
                     txt = txt.replace(/&lt;(.+?)&gt;/g,"<span class='highlight-before'>&lt;$1&gt;</span>");
                     txt = txt.replace(/&lt;(.+?)\/&gt;/g,"<span class='highlight-before'>&lt;$1&gt;</span>");
                     $(this).html(txt)
 
                  });
 
-            });
-            $(".mobile-menu-li").click(function(){
-                alert("A");
-                $(".mobile-menu-li-show").fadeToggle(800);
             });
 
             // $(".tagName").blur(function(){

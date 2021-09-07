@@ -3,6 +3,7 @@ from flask import render_template,request,redirect, url_for
 from datetime import datetime
 import time
 from markupsafe import Markup
+from sqlalchemy import func
 
 from initialize import *
 from db_models import *
@@ -124,13 +125,15 @@ def modifyPost(pid):
             return redirect(url_for('login'))
     except Exception as e:
         print(e)
-@app.route("/deletePost/<pid>",methods=['POST', 'GET'])
-def deletePost(pid):
+@app.route("/deletePost",methods=['POST', 'GET'])
+def deletePost():
     try:
         if user_action.getUserConfirm():
-            post = Post.query.filter_by(pid = pid).first()
-            db.session.delete(post)
-            db.session.commit()
+            if request.form.get("deletePid") is not None:
+                pid = request.form.get("deletePid")
+                post = Post.query.filter_by(pid = pid).first()
+                db.session.delete(post)
+                db.session.commit()
             return ":)"
 
         else:
@@ -138,13 +141,15 @@ def deletePost(pid):
     except Exception as e:
         print(e)
 
-@app.route("/deleteNote/<pid>",methods=['POST', 'GET'])
-def deleteNotes(pid):
+@app.route("/deleteNote",methods=['POST', 'GET'])
+def deleteNotes():
     try:
         if user_action.getUserConfirm():
-            notes = Note.query.filter_by(pid = pid).first()
-            db.session.delete(notes)
-            db.session.commit()
+            if request.form.get("deletePid") is not None:
+                pid = request.form.get("deletePid")
+                notes = Note.query.filter_by(pid = pid).first()
+                db.session.delete(notes)
+                db.session.commit()
             return ":)"
 
         else:
@@ -155,8 +160,16 @@ def deleteNotes(pid):
 def admin():
     try:
         if user_action.getUserConfirm():
+            counts = dict();
+            counts["post"] =db.session.query(func.count(Post.id)).scalar()
+            counts["user"] =db.session.query(func.count(User.id)).scalar()
+            counts["note"] =db.session.query(func.count(Note.id)).scalar()
+
             posts = Post.query.order_by(Post.id.desc()).all()
-            return render_template('admin.html',posts=posts)
+            notes = Note.query.order_by(Note.id.desc()).all()
+            users = User.query.order_by(User.id).all()
+
+            return render_template('admin.html',counts=counts,posts=posts,notes=notes,users=users)
         else:
             return redirect(url_for('login'))
     except Exception as e:

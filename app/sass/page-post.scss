@@ -1,0 +1,96 @@
+@media only screen and (min-width: 768px) {
+    .page-post{
+        .application-main{
+            display:flex;
+            flex-direction: row;
+            align-items: baseline;
+            justify-content: space-evenly;
+            .post{
+                display:flex;
+                flex-direction: column;
+                align-items: flex-start;
+                width:40%;
+                padding-top:1em;
+                .title{
+                    font-size:30px;
+                    font-weight:bold;
+                    color:#494949;
+                    letter-spacing: 1.6px;
+                    width:100%;
+                }
+                .time{
+                    color:#867a7a9c;
+                    letter-spacing: 1px;
+                    margin:1em 0;
+                    width:100%;
+                    font:10px;
+
+                }
+                .footer{
+                    text-align: center;
+                    padding: 0.4em 3em;
+                    background-color: #1f729acc;
+                    color: white;
+                    font-weight: bold;
+                    margin-top: 2em;
+                    border-radius: 5px;
+                }
+            }
+            .options{
+                width:20%;
+                font-size:14px;
+                a{
+                    display:flex;
+                    flex-direction:row;
+                    align-items:center;
+                    padding:5px 0;
+                    img{
+                        padding-right:4px;
+                        width:14px;
+                        height:14px;
+                    }
+                }
+
+            }
+        }
+    }
+}
+// Mobile Phone
+@media only screen and (max-width: 767px) {
+    .page-post{
+        .application-main{
+            padding: 0 3em;
+            .post{
+                .title{
+                    font-size:30px;
+                    font-weight:bold;
+                    color:#494949;
+                    letter-spacing: 1.6px;
+                    width:100%;
+                }
+                .time{
+                    color:#867a7a9c;
+                    letter-spacing: 1px;
+                    margin:1em 0;
+                    width:100%;
+                    font:10px;
+
+                }
+                .footer{
+                    text-align: center;
+                    padding: 10px 20px;
+                    background-color: #1f729acc;
+                    color: white;
+                    font-weight: bold;
+                    margin-top: 2em;
+                    border-radius: 5px;
+                }
+            }
+
+            .options{
+                display: none;
+            }
+        }
+    }
+
+}

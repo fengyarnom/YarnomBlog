@@ -14,8 +14,15 @@
                     </div>
                 </div>
 
-                <div class="form-group send-box">
-                    <div class="button">PUBLISH</div>
+                <div class="form-group">
+
+                    <div class="send-box">
+                        <div class="setting-box-phone">
+                            <img src="{{url_for('static',filename='img/setting (1).svg')}}" alt="">
+                        </div>
+                        <div class="button">PUBLISH</div>
+                    </div>
+
                 </div>
 
 
@@ -44,14 +51,14 @@
                     <label><input class="checkbox set-top" type="checkbox"> 置顶此文章 </label>
                     <label><input class="checkbox set-note" type="checkbox"> 设置此文章为通告 </label>
                 </div>
-                <div class="image">
+                <!-- <div class="image">
                     <h4>图片上传</h4>
                     <from class="imgForm">
                         <input id="input-img" type="file"  size="30" name="pic"/>
                         <button class="uploadImg" type="button" name="button">添加图片</button>
                     </from>
 
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -114,6 +121,9 @@
 
                 }
             });
+         });
+         $(".setting-box-phone").click(function(){
+             $(".right-box").toggle(600);
          });
 });
 
