@@ -56,6 +56,27 @@ pre {
     font-weight: bold;
   }
 }
+@media only screen and (max-width: 767px) {
+  .header {
+    padding: 1em 1em;
+    border-bottom: 1px solid #eee;
+    background-color: white;
+    box-shadow: 2px 1px 10px #eee;
+  }
+  .header .admin-public-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1.5px;
+  }
+  .header .admin-public-nav .nav-title .title {
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .header .admin-public-nav .nav-menu {
+    display: none;
+  }
+}
 @media only screen and (min-width: 768px) {
   .page-home {
     padding: 0 10em;
@@ -149,6 +170,105 @@ pre {
     width: 25%;
   }
   .page-home .application-main .basic-data .details .notes .data table tr td .deletePost, .page-home .application-main .basic-data .details .posts .data table tr td .deletePost, .page-home .application-main .basic-data .details .users .data table tr td .deletePost, .page-home .application-main .basic-data .details .daily .data table tr td .deletePost {
+    cursor: pointer;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .page-home {
+    padding: 0 3em;
+  }
+  .page-home .application-main .basic-data-title {
+    margin-top: 3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .page-home .application-main .basic-data-title .title-box .subtitle {
+    font-size: 12px;
+    font-weight: bold;
+    color: #7c8188;
+  }
+  .page-home .application-main .basic-data-title .title-box .title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .page-home .application-main .basic-data-title .new-post {
+    display: flex;
+    align-items: center;
+    background-color: #206bc4;
+    padding: 7px 10px;
+    color: white;
+    border-radius: 5px;
+  }
+  .page-home .application-main .basic-data-title .new-post img {
+    height: 16px;
+    width: 16px;
+    color: white;
+  }
+  .page-home .application-main .basic-data-title .new-post .text {
+    display: none;
+  }
+  .page-home .application-main .basic-data {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+  }
+  .page-home .application-main .basic-data .overview {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .page-home .application-main .basic-data .overview .posts, .page-home .application-main .basic-data .overview .notes, .page-home .application-main .basic-data .overview .users, .page-home .application-main .basic-data .overview .daily {
+    padding: 1em 1em;
+    margin: 0.3em 0;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background-color: white;
+  }
+  .page-home .application-main .basic-data .overview .posts .title, .page-home .application-main .basic-data .overview .notes .title, .page-home .application-main .basic-data .overview .users .title, .page-home .application-main .basic-data .overview .daily .title {
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    color: #7c8188;
+  }
+  .page-home .application-main .basic-data .overview .posts .data, .page-home .application-main .basic-data .overview .notes .data, .page-home .application-main .basic-data .overview .users .data, .page-home .application-main .basic-data .overview .daily .data {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+  }
+  .page-home .application-main .basic-data .overview .posts .data .data-inner, .page-home .application-main .basic-data .overview .notes .data .data-inner, .page-home .application-main .basic-data .overview .users .data .data-inner, .page-home .application-main .basic-data .overview .daily .data .data-inner {
+    font-size: 30px;
+  }
+  .page-home .application-main .details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 2em;
+  }
+  .page-home .application-main .details .notes, .page-home .application-main .details .posts, .page-home .application-main .details .users, .page-home .application-main .details .daily {
+    width: 100%;
+    padding: 1em 1em;
+    margin: 0 0 1em 0;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background-color: white;
+    min-height: 12em;
+    overflow: auto;
+  }
+  .page-home .application-main .details .notes .title, .page-home .application-main .details .posts .title, .page-home .application-main .details .users .title, .page-home .application-main .details .daily .title {
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    color: #7c8188;
+  }
+  .page-home .application-main .details .notes .data table, .page-home .application-main .details .posts .data table, .page-home .application-main .details .users .data table, .page-home .application-main .details .daily .data table {
+    margin-top: 1em;
+    width: 100%;
+    font-size: 14px;
+    text-align: left;
+  }
+  .page-home .application-main .details .notes .data table tr td .deletePost, .page-home .application-main .details .posts .data table tr td .deletePost, .page-home .application-main .details .users .data table tr td .deletePost, .page-home .application-main .details .daily .data table tr td .deletePost {
     cursor: pointer;
   }
 }

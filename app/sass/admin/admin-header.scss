@@ -19,3 +19,28 @@
     }
 
 }
+
+// Mobile Phone
+@media only screen and (max-width: 767px) {
+    .header{
+        padding:1em 1em;
+        border-bottom: 1px solid #eee;
+        background-color: white;
+        box-shadow: 2px 1px 10px #eee;
+        .admin-public-nav{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            letter-spacing: 1.5px;
+            .nav-title{
+                .title{
+                    font-size: 28px;
+                    font-weight: bold;
+                }
+            }
+            .nav-menu{
+                display: none;
+            }
+        }
+    }
+}
