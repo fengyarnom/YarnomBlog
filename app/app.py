@@ -75,7 +75,7 @@ def newPost():
                 isTop = request.form.get("isTop")
 
                 if(len(tag) == 0):
-                    tag = "默认"
+                    tag = "#"
                 
                 if(request.form.get("post_class") == 'post'):
                     req = Post(title=title, content=content, time=datetime.now(), pid=pid, isTop=isTop, tag=tag)
