@@ -4,24 +4,48 @@
     <div class="page-newPost">
         <div class="application-main">
             <div class="left-box"></div>
-            <form action="/new-post" class="post-form" method="get">
+            <!-- <form action="/new-post" class="post-form" method="get">
                 <span class="span-pid">
                     {{ post.pid }}
                 </span>
                 <div class="form-group">
                     <input class="form-title" type="text" name="title" value={{post.title}}>
-                    
+
                 </div>
                 <div class="form-group">
                     <div class="form-content" name="content" contenteditable="true" >
                         {{ post.content |safe}}
                     </div>
                 </div>
-                
+
                 <div class="form-group send-box">
                     <div class="button">PUBLISH</div>
                 </div>
-                
+
+            </form> -->
+            <form action="/new-post" class="post-form" method="get">
+                <span class="span-pid">
+                    {{ post.pid }}
+                </span>
+                <div class="form-group">
+                    <input class="form-title" type="text" name="title" value={{post.title}}>
+                </div>
+                <div class="form-group">
+                    <div class="form-content" name="content" contenteditable="true" >
+                        {{ post.content |safe}}
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <div class="send-box">
+                        <div class="setting-box-phone">
+                            <img src="{{url_for('static',filename='img/setting (1).svg')}}" alt="">
+                        </div>
+                        <div class="button">PUBLISH</div>
+                    </div>
+
+                </div>
             </form>
             <div class="right-box">
                 <div class="archive-box">
@@ -36,19 +60,19 @@
                                 {% endfor %}
                             </ul>
                         </div>
-                        
+
                     </div>
 
                 </div>
                 <div class="option">
                     <h4>文章设置</h4>
                     {% if post.isTop%}
-                        <label><input class="checkbox set-top" type="checkbox" checked> 置顶此文章 </label> 
+                        <label><input class="checkbox set-top" type="checkbox" checked> 置顶此文章 </label>
                     {% else %}
                         <label><input class="checkbox set-top" type="checkbox"> 置顶此文章 </label>
                     {% endif %}
-                    <label><input class="checkbox set-note" type="checkbox"> 设置此文章为通告 </label> 
-                    
+                    <label><input class="checkbox set-note" type="checkbox"> 设置此文章为通告 </label>
+
                 </div>
             </div>
         </div>
@@ -60,11 +84,11 @@
                 var title = $(".form-title").val();
                 var content = $(".form-content").html();
                 var archiveClass = $(".tagName").val();
-                
+
                 var isTop = 0
                 if($(".set-top").is(":checked")){
                     isTop = 1;
-                } 
+                }
 
                 var post_class = ''
                 if($(".set-note").is(':checked')){
@@ -73,7 +97,7 @@
                     post_class = 'post';
                 }
 
-                
+
                 var post_url = '/modifyPost/'+$('.span-pid').text().trim();
                 $.post(post_url,{
                     post_class:post_class,
@@ -97,7 +121,10 @@
                 var tagName = $(this).text();
                 $(".tagName").val(tagName);
             });
+            $(".setting-box-phone").click(function(){
+                $(".right-box").toggle(600);
+            });
         });
-    
+
     </script>
 {% endblock %}

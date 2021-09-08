@@ -76,7 +76,7 @@ def newPost():
 
                 if(len(tag) == 0):
                     tag = "#"
-                
+
                 if(request.form.get("post_class") == 'post'):
                     req = Post(title=title, content=content, time=datetime.now(), pid=pid, isTop=isTop, tag=tag)
                 else:
@@ -236,6 +236,11 @@ def archive_tags(tag):
     ).all()
 
     return render_template('tags.html',time=datetime.now(),posts=posts,tag=tag)
+
+@app.route("/demo",methods=['POST', 'GET'])
+def demo():
+
+    return render_template('demo.html')
 
 
 if __name__ == '__main__':
