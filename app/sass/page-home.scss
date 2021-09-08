@@ -16,17 +16,26 @@
                     img{
                         max-width:100%;
                     }
-                    .time {
-                        font-size: 14px;
+                    .time,.tag {
+                        font-size: 12px;
                         color: #aaa;
+                        display: flex;
+                        align-items:center;
+                        font-family: "Roboto-Regular";
+
+                        img{
+                            height:16px;
+                            padding-right:8px;
+                        }
+                    }
+                    .tag{
+                        margin-bottom: 1.5em;
                     }
                     .title {
                         font-size: 34px;
-                        padding: 0 0 0.5em 0;
                         display: flex;
                         align-items: baseline;
                         font-weight: 700;
-                        margin-top: 5px;
                         flex-wrap: wrap;
                         a{
                             line-height: 1.7em;
@@ -53,9 +62,10 @@
                     .note{
                         border: 1px solid #dadada9e;
                         border-radius: 4px;
-                        padding: 12px;
-                        font-size:14px;
+                        padding: 14px;
+                        font-size:10    px;
                         margin-bottom: 1em;
+
                     }
                 }
                 .recentPosts,.myLinks{
@@ -116,11 +126,9 @@
                 border-bottom: 2px dashed #eee;
                 .title {
                     font-size: 34px;
-                    padding: 0 0 0.5em 0;
                     display: flex;
                     align-items: baseline;
                     font-weight: 700;
-                    margin-top: 5px;
                     flex-wrap: wrap;
                     line-height: 1.4em;
                     .pre{
@@ -128,15 +136,21 @@
                         color:#d07474e0;
                     }
                 }
-                .time {
-                    font-size: 14px;
+                .time,.tag {
+                    font-size: 12px;
                     color: #aaa;
-                    span{
-                        font-size: 12px;
-                        color: #dadada;
-                        padding-left: 12px;
-                    }
+                    display: flex;
+                    align-items:center;
+                    font-family: "Roboto-Regular";
 
+
+                    img{
+                        height:16px;
+                        padding-right:8px;
+                    }
+                }
+                .tag{
+                    margin-bottom: 1.5em;
                 }
             }
         }

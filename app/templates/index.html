@@ -29,8 +29,11 @@
                             <span class="pre">&</span>
                             {{ item.title }}
                         </a>
-
                     </div>
+                    <span class="tag">
+                        <img src="{{ url_for('static',filename='img/tag (1).svg')}}" alt="">
+                        {{ item.tag }}
+                    </span>
                     <div class="public-post-content">
                         {{ item.content|safe}}
                     </div>

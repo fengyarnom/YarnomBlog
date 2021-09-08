@@ -9,7 +9,6 @@
 a {
   text-decoration: none;
   color: #3d3d3d;
-  color:#3d3d3d;
 }
 
 li {
@@ -310,17 +309,25 @@ pre {
   .page-home .application-main .posts .post img {
     max-width: 100%;
   }
-  .page-home .application-main .posts .post .time {
-    font-size: 14px;
+  .page-home .application-main .posts .post .time, .page-home .application-main .posts .post .tag {
+    font-size: 12px;
     color: #aaa;
+    display: flex;
+    align-items: center;
+    font-family: "Roboto-Regular";
+  }
+  .page-home .application-main .posts .post .time img, .page-home .application-main .posts .post .tag img {
+    height: 16px;
+    padding-right: 8px;
+  }
+  .page-home .application-main .posts .post .tag {
+    margin-bottom: 1.5em;
   }
   .page-home .application-main .posts .post .title {
     font-size: 34px;
-    padding: 0 0 0.5em 0;
     display: flex;
     align-items: baseline;
     font-weight: 700;
-    margin-top: 5px;
     flex-wrap: wrap;
   }
   .page-home .application-main .posts .post .title a {
@@ -346,8 +353,8 @@ pre {
   .page-home .application-main .sidebar .notes .note {
     border: 1px solid #dadada9e;
     border-radius: 4px;
-    padding: 12px;
-    font-size: 14px;
+    padding: 14px;
+    font-size: 10    px;
     margin-bottom: 1em;
   }
   .page-home .application-main .sidebar .recentPosts, .page-home .application-main .sidebar .myLinks {
@@ -403,11 +410,9 @@ pre {
   }
   .page-home .posts .post .title {
     font-size: 34px;
-    padding: 0 0 0.5em 0;
     display: flex;
     align-items: baseline;
     font-weight: 700;
-    margin-top: 5px;
     flex-wrap: wrap;
     line-height: 1.4em;
   }
@@ -415,14 +420,19 @@ pre {
     padding-right: 10px;
     color: #d07474e0;
   }
-  .page-home .posts .post .time {
-    font-size: 14px;
-    color: #aaa;
-  }
-  .page-home .posts .post .time span {
+  .page-home .posts .post .time, .page-home .posts .post .tag {
     font-size: 12px;
-    color: #dadada;
-    padding-left: 12px;
+    color: #aaa;
+    display: flex;
+    align-items: center;
+    font-family: "Roboto-Regular";
+  }
+  .page-home .posts .post .time img, .page-home .posts .post .tag img {
+    height: 16px;
+    padding-right: 8px;
+  }
+  .page-home .posts .post .tag {
+    margin-bottom: 1.5em;
   }
   .page-home .sidebar {
     display: none;
