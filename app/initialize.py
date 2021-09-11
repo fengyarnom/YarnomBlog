@@ -17,5 +17,3 @@ def isInit():
         return True
     else:
         return False
-
-
