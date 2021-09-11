@@ -5,6 +5,8 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Flask" />
+    <orderEntry type="module" module-name="A" />
+    <orderEntry type="module" module-name="ProductionSystem" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />

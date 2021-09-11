@@ -27,8 +27,7 @@ body {
 }
 
 pre {
-  white-space: pre-wrap;
-  word-wrap: break-word;
+  overflow-x: auto;
 }
 
 @media only screen and (min-width: 768px) {
@@ -624,9 +623,6 @@ pre {
     justify-content: space-evenly;
   }
   .page-post .application-main .post {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     width: 40%;
     padding-top: 1em;
   }
@@ -645,6 +641,7 @@ pre {
     font: 10px;
   }
   .page-post .application-main .post .footer {
+    display: none;
     text-align: center;
     padding: 0.4em 3em;
     background-color: #1f729acc;
@@ -864,7 +861,6 @@ pre {
     letter-spacing: 1px;
     font-size: 17px;
     min-height: 600px;
-    max-height: 1200px;
     line-hight: 1.7;
     outline: none;
   }
@@ -951,7 +947,6 @@ pre {
     letter-spacing: 1px;
     font-size: 17px;
     min-height: 400px;
-    max-height: 1200px;
     line-hight: 1.7;
     outline: none;
   }

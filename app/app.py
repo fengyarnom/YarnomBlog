@@ -117,7 +117,10 @@ def modifyPost(pid):
             if request.form.get("title") is not None:
                 post.title = request.form.get("title")
                 post.content = request.form.get("content")
-                post.tag = request.form.get("tag").strip()
+
+                if(len(request.form.get("tag").strip()) != 0):
+                    post.tag = request.form.get("tag").strip()
+
                 post.isTop = request.form.get("isTop")
                 if(len(post.tag) != 0 and ArchiveClass.query.filter_by(name=post.tag).first() is None):
                     req2 = ArchiveClass(name=post.tag)
