@@ -9,11 +9,19 @@
                     <span class="time">{{ item.time }}</span>
                     <div class="title">
                         <a href="/post/{{ item.pid }}">
-                            <span class="pre">&</span>
+                            <!-- <span class="pre">&</span> -->
                             {{ item.title }}
                         </a>
-                        <span>置顶文章</span>
+
                     </div>
+                    <span class="top">
+                        <img src="{{ url_for('static',filename='img/置顶.svg')}}" alt="">
+                        置顶文章
+                    </span>
+                    <span class="tag">
+                        <img src="{{ url_for('static',filename='img/tag (1).svg')}}" alt="">
+                        {{ item.tag }}
+                    </span>
                     <div class="public-post-content">
                         {{ item.content|safe}}
                     </div>
@@ -26,7 +34,7 @@
                     <span class="time">{{ item.time }}</span>
                     <div class="title">
                         <a href="/post/{{ item.pid }}">
-                            <span class="pre">&</span>
+                            <!-- <span class="pre">&</span> -->
                             {{ item.title }}
                         </a>
                     </div>

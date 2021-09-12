@@ -69,32 +69,37 @@
             color:white;
             border-radius: 5px;
             margin-top: 25px;
-            margin-left: -30px;
-            margin-right: -30px;
             margin-bottom: 25px;
             padding-left: 30px;
             padding-right: 30px;
         }
-        h1{
-            &::before{
-                color:$pre-color;
-                content: '# ';
-            }
-        }
-        h2{
-            &::before{
-                color:$pre-color;
-                content: '## ';
-            }
-
-        }
-        h3{
-            &::before{
-                color:$pre-color;
-                content: '### ';
-            }
-
-        }
+        // h1{
+        //     &:hover{
+        //         &::before{
+        //             color:$pre-color;
+        //             content: '# ';
+        //         }
+        //     }
+        //
+        // }
+        // h2{
+        //     &:hover{
+        //         &::before{
+        //             color:$pre-color;
+        //             content: '## ';
+        //         }
+        //     }
+        //
+        // }
+        // h3{
+        //     &:hover{
+        //         &::before{
+        //             color:$pre-color;
+        //             content: '### ';
+        //         }
+        //     }
+        //
+        // }
     }
 }
 
@@ -266,32 +271,48 @@
             color:white;
             border-radius: 5px;
             margin-top: 25px;
-            margin-left: -30px;
-            margin-right: -30px;
             margin-bottom: 25px;
             padding-left: 30px;
             padding-right: 30px;
         }
 
+        // h1{
+        //     &::before{
+        //         color:$pre-color;
+        //         content: '# ';
+        //     }
+        // }
+        // h2{
+        //     &::before{
+        //         color:$pre-color;
+        //         content: '## ';
+        //     }
+        //
+        // }
+        // h3{
+        //     &::before{
+        //         color:$pre-color;
+        //         content: '### ';
+        //     }
+        //
+        // }
         h1{
-            &::before{
-                color:$pre-color;
-                content: '# ';
-            }
+            font-size: 24px;
         }
         h2{
-            &::before{
-                color:$pre-color;
-                content: '## ';
-            }
-
+            font-size: 22px;
         }
         h3{
-            &::before{
-                color:$pre-color;
-                content: '### ';
-            }
-
+            font-size: 18px;
+        }
+        h4{
+            font-size: 16px;
+        }
+        h5{
+            font-size: 14px;
+        }
+        h5{
+            font-size: 12px;
         }
     }
 }

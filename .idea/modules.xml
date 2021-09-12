@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$USER_HOME$/Area/Code/HRBNU/Python/A/.idea/A.iml" filepath="$USER_HOME$/Area/Code/HRBNU/Python/A/.idea/A.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../../Note/Flask/.idea/Flask.iml" filepath="$PROJECT_DIR$/../../../../Note/Flask/.idea/Flask.iml" />
+      <module fileurl="file://$USER_HOME$/Area/Code/HRBNU/Python/M_C/.idea/M_C.iml" filepath="$USER_HOME$/Area/Code/HRBNU/Python/M_C/.idea/M_C.iml" />
       <module fileurl="file://$USER_HOME$/Area/Code/HRBNU/Python/ProductionSystem/.idea/ProductionSystem.iml" filepath="$USER_HOME$/Area/Code/HRBNU/Python/ProductionSystem/.idea/ProductionSystem.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/YarnomBlog.iml" filepath="$PROJECT_DIR$/.idea/YarnomBlog.iml" />
     </modules>

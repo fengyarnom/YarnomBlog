@@ -7,6 +7,7 @@
     <orderEntry type="module" module-name="Flask" />
     <orderEntry type="module" module-name="A" />
     <orderEntry type="module" module-name="ProductionSystem" />
+    <orderEntry type="module" module-name="M_C" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />

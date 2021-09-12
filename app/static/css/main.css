@@ -93,23 +93,9 @@ pre {
     color: white;
     border-radius: 5px;
     margin-top: 25px;
-    margin-left: -30px;
-    margin-right: -30px;
     margin-bottom: 25px;
     padding-left: 30px;
     padding-right: 30px;
-  }
-  .public-post-content h1::before {
-    color: #2459abc4;
-    content: '# ';
-  }
-  .public-post-content h2::before {
-    color: #2459abc4;
-    content: '## ';
-  }
-  .public-post-content h3::before {
-    color: #2459abc4;
-    content: '### ';
   }
 }
 @media only screen and (max-width: 767px) {
@@ -269,23 +255,27 @@ pre {
     color: white;
     border-radius: 5px;
     margin-top: 25px;
-    margin-left: -30px;
-    margin-right: -30px;
     margin-bottom: 25px;
     padding-left: 30px;
     padding-right: 30px;
   }
-  .public-post-content h1::before {
-    color: #2459abc4;
-    content: '# ';
+  .public-post-content h1 {
+    font-size: 24px;
   }
-  .public-post-content h2::before {
-    color: #2459abc4;
-    content: '## ';
+  .public-post-content h2 {
+    font-size: 22px;
   }
-  .public-post-content h3::before {
-    color: #2459abc4;
-    content: '### ';
+  .public-post-content h3 {
+    font-size: 18px;
+  }
+  .public-post-content h4 {
+    font-size: 16px;
+  }
+  .public-post-content h5 {
+    font-size: 14px;
+  }
+  .public-post-content h5 {
+    font-size: 12px;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -308,14 +298,15 @@ pre {
   .page-home .application-main .posts .post img {
     max-width: 100%;
   }
-  .page-home .application-main .posts .post .time, .page-home .application-main .posts .post .tag {
+  .page-home .application-main .posts .post .time, .page-home .application-main .posts .post .tag, .page-home .application-main .posts .post .top {
     font-size: 12px;
     color: #aaa;
     display: flex;
     align-items: center;
+    justify-content: center;
     font-family: "Roboto-Regular";
   }
-  .page-home .application-main .posts .post .time img, .page-home .application-main .posts .post .tag img {
+  .page-home .application-main .posts .post .time img, .page-home .application-main .posts .post .tag img, .page-home .application-main .posts .post .top img {
     height: 16px;
     padding-right: 8px;
   }
@@ -323,9 +314,10 @@ pre {
     margin-bottom: 1.5em;
   }
   .page-home .application-main .posts .post .title {
-    font-size: 34px;
+    font-size: 28px;
     display: flex;
     align-items: baseline;
+    justify-content: center;
     font-weight: 700;
     flex-wrap: wrap;
   }
@@ -336,6 +328,9 @@ pre {
     padding-right: 6px;
     color: #d07474e0;
     font-family: "Garamond";
+  }
+  .page-home .application-main .posts .post .title span {
+    font-size: 12px;
   }
   .page-home .application-main .sidebar {
     display: block;
@@ -408,25 +403,21 @@ pre {
     border-bottom: 2px dashed #eee;
   }
   .page-home .posts .post .title {
-    font-size: 34px;
+    font-size: 28px;
     display: flex;
     align-items: baseline;
     font-weight: 700;
     flex-wrap: wrap;
     line-height: 1.4em;
   }
-  .page-home .posts .post .title .pre {
-    padding-right: 10px;
-    color: #d07474e0;
-  }
-  .page-home .posts .post .time, .page-home .posts .post .tag {
+  .page-home .posts .post .time, .page-home .posts .post .tag, .page-home .posts .post .top {
     font-size: 12px;
     color: #aaa;
     display: flex;
     align-items: center;
     font-family: "Roboto-Regular";
   }
-  .page-home .posts .post .time img, .page-home .posts .post .tag img {
+  .page-home .posts .post .time img, .page-home .posts .post .tag img, .page-home .posts .post .top img {
     height: 16px;
     padding-right: 8px;
   }
